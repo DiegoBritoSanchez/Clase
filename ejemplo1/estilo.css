@@ -1,0 +1,43 @@
+body {
+  background-color: darkblue;
+  font-size: larger;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: justify;
+}
+h1 {
+  color: aqua;
+}
+h3, h2 {
+  color: aquamarine;
+}
+ul > li {
+  list-style: square;
+}
+
+ol > li {
+  list-style: upper-roman;
+}
+li {
+  color: beige;
+  padding-top: 1em;
+}
+img {
+  width: 75%;
+}
+button {
+  color: aqua;
+  background-color: blueviolet;
+  margin-left: 35%;
+  margin-top: 1em;
+  padding: 1ex;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+#pre {
+    border: 1px solid yellow;
+    padding: 0em 1em 0em 1em;
+}
