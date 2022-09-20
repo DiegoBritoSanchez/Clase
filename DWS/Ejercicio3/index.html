@@ -12,17 +12,18 @@
     </style>
   </head>
   <body>
-    <form action="">
+    <form action="formulario.php" method="post">
       <label for="nombre">Nombre:</label>
-      <input type="text" name="" id="nombre" size="10"/>
+      <input type="text" name="nombre" id="nombre" size="10"/>
       <label for="apellido">Apellido:</label>
-      <input type="text" name="" id="apellido" size="15"/>
+      <input type="text" name="apellido" id="apellido" size="15"/>
       <label for="edad">Edad:</label>
-      <input type="number" name="" id="edad"/>
+      <input type="number" name="edad" id="edad"/>
       <label for="mail">Email:</label>
-      <input type="email" name="" id="mail" />
+      <input type="email" name="mail" id="mail" />
       <button type="submit">Enviar</button>
-      <button disabled>Borrar</button>
+      <button type="reset">Borrar</button>
     </form>
+    <a target="_self" href="../">Volver</a>
   </body>
 </html>
