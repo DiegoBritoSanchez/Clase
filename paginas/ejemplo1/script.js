@@ -13,7 +13,8 @@ const comensales = () => {
   }
 };
 const fondo = () => {
-  const months = ["darkblue", "violet", "darkgoldenrod"];
+  const months = ["darkblue", "coral", "darkgoldenrod", "chocolate"];
   const random = Math.floor(Math.random() * months.length);
   document.body.style.backgroundColor = months[random];
 };
+
