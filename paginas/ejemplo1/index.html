@@ -9,13 +9,13 @@
     <script src="script.js"></script>
     <!-- Diego Brito Sánchez -->
   </head>
-  <body>
+  <body onload="comensales()">
     <h1>Receta ejemplo</h1>
     <img src="imagenes/papas.webp" alt="" />
     <h3>Ingredientes</h3>
     <h3 id="comensalesL"></h3>
     <ul>
-      <li id="papasL">Papas pequeñas: <span> 500g</span></li>
+      <li id="papasL">Papas pequeñas: <span id="kg"> 500g</span></li>
       <li>Sal gorda: 1 puñado</li>
       <li>Agua</li>
     </ul>
@@ -36,6 +36,6 @@
       </ol>
     </div>
     <button onclick="saludar()">Saludar</button>
-    <button onclick="comensales()">Saludar</button>
+    <button onclick="fondo()">Magia</button>
   </body>
 </html>
