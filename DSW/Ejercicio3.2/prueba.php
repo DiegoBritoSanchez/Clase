@@ -15,8 +15,8 @@
     $nombre = $_POST['nombre'];
     $sueldo = $_POST['sueldo'];
     $ipc = $_POST['ipc'];
-    echo "<p>Su nombre es $nombre, su sueldo es $sueldo.</p>";
-    echo "<p>Con un IPC de $ipc% su sueldo quedaría en " . $sueldo + ($sueldo * ($ipc / 100)) . "</p>";
+    echo "<h1>Su nombre es $nombre, su sueldo es $sueldo.</h1>";
+    echo "<h1>Con un IPC de $ipc% su sueldo quedaría en " . $sueldo + ($sueldo * ($ipc / 100)) . "</h1>";
     ?>
 </body>
 
