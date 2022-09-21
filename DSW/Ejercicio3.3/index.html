@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../Ejercicio3/style.css" />
   </head>
   <body>
-    <a target="_self" href="../">Volver</a>
-    <form action="fondo.php" method="post">
+    <a target="_self" href="../" id="volver">Volver</a>
+    <div id="contenedor">
+      <form action="fondo.php" method="post">
         <label for="rojo">Rojo</label>
-        <input type="radio" name="color" id="rojo" value="Salmon">
+        <input type="radio" name="color" id="rojo" value="Salmon" />
         <label for="azul">Azul</label>
-        <input type="radio" name="color" id="azul" value="lightblue">
-        <label for="verde">Rojo</label>
-        <input type="radio" name="color" id="verde" value="lightgreen">
+        <input type="radio" name="color" id="azul" value="lightblue" />
+        <label for="verde">Verde</label>
+        <input type="radio" name="color" id="verde" value="lightgreen" />
         <button type="submit">Enviar</button>
-    </form>
+      </form>
+    </div>
   </body>
 </html>

@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<a target="_self" href="index.html" id="volver">Volver</a>
     <?php 
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
@@ -14,6 +15,5 @@
     . Su resta es ".$num1-$num2.". Su multiplicación es ".$num1*$num2."
     . Y su división es ".$num1/$num2.". Y el módulo es ".$num1%$num2.".</p>"
     ?>
-    <a target="_self" href="index.html">Volver</a>
 </body>
 </html>

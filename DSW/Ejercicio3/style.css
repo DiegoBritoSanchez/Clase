@@ -1,3 +1,75 @@
 body {
-    background-image: url("image/pexels-valiphotos-589840.jpg");
+  background-image: url("image/pexels-valiphotos-589840.jpg");
+  color: aliceblue;
+}
+
+#contenedor {
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translatex(-50%);
+  transform: translatex(-50%);
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  -o-transform: translatex(-50%);
+}
+
+input,
+label {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#volver {
+  background-color: aqua;
+  margin: 1em 1em;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+#volver:hover {
+  background-color: aquamarine;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#volver:visited {
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 1em;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+  color: blue;
+  background-color: blanchedalmond;
+  text-transform: uppercase;
+  left: 45%;
+  -ms-transform: translatex(-50%);
+  transform: translatex(-50%);
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  -o-transform: translatex(-50%);
+}
+
+button:hover {
+    background-color: blueviolet;
+    color: aqua;
+    font-size: larger;
 }

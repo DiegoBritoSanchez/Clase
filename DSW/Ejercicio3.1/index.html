@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <a target="_self" href="../">Volver</a>
+    <link rel="stylesheet" href="../Ejercicio3/style.css" />
+  </head>
+  <body>
+    <a target="_self" href="../" id="volver">Volver</a>
     <h1>Prueba 3.1</h1>
-    <form action="prueba.php" method="post">
+    <div id="contenedor">
+      <form action="prueba.php" method="post">
         <label for="numero1">Primer número</label>
-        <input type="number" name="num1">
+        <input type="number" name="num1" />
         <label for="numero2">Segundo número</label>
-        <input type="number" name="num2">
+        <input type="number" name="num2" />
         <button type="submit">Enviar</button>
-    </form>
-</body>
+      </form>
+    </div>
+  </body>
 </html>
