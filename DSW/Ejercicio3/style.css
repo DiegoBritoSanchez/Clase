@@ -17,10 +17,12 @@ body {
 }
 
 input,
-label {
+label,
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
+  text-align: center;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -69,7 +71,7 @@ button {
 }
 
 button:hover {
-    background-color: blueviolet;
-    color: aqua;
-    font-size: larger;
+  background-color: blueviolet;
+  color: aqua;
+  font-size: larger;
 }
