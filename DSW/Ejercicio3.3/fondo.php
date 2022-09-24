@@ -6,7 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../Ejercicio3/style.css" />
+    <style>
+        #volver {
+            background-color: aqua;
+            margin: 1em 1em;
+            padding: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
