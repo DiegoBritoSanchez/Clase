@@ -1,0 +1,17 @@
+body {
+    background-image: url(images/pexels-simon-berger-1323550.jpg);
+    display: flexbox;
+}
+
+p {
+    margin-left: 26%;
+    width: 50%;
+    border: 1mm solid black;
+    padding: 1em;
+}
+
+#bucle6, #bucle5, #bucle4, #bucle3, #bucle2, #bucle1 {
+    border: 1mm solid black;
+    padding: 1em;
+    display: inline-flex;
+}
