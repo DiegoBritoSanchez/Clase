@@ -58,19 +58,20 @@ function calculoIMC() {
 function calculoFCM() {
   let edad;
   let sexo;
-  let tabla = document.createElement("tr");
-  let fila;
+  let p = document.getElementById("fmcP");
+  let fcm;
 
   edad = prompt("Introduzca su edad", "25");
   sexo = prompt("Introduzca su sexo", "Hombre/Mujer");
-  
+
   if (sexo.toLowerCase() == "hombre") {
-    let fcm = 209 - 0.7 * edad;
+    fcm = (209 - 0.7 * edad).toFixed(2);
   } else if (sexo.toLowerCase() == "mujer") {
-    let fcm = 214 - 0.8 * edad;
+    fcm = (214 - 0.8 * edad).toFixed(2);
   }
 
-  fila = document.createTextNode(fcm);
-  tabla.appendChild(fila);
-  document.getElementById("fmcTabla").appendChild(tabla);
+  p.innerHTML +=
+    "Su frecuencia cardíaca es" +
+    fcm +
+    "</br> Su zona de recuperación oscila entre "+fcm*0.6+" y "+fcm*0.7;
 }
