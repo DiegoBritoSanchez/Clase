@@ -15,19 +15,20 @@
         <form action="index.php" method="post">
             <label for="number">Tabla de multiplicar:</label>
             <input type="number" name="number" id="">
-
             <?php
             error_reporting(0);
             $numero = $_POST['number'];
-            echo "<table>";
-            for ($i=0; $i < 10; $i++) { 
-                echo "";
+            if ($numero > 0) {
+                echo "<table><th>Tabla del $numero</th>";
+                for ($i = 0; $i < 10; $i++) {
+                    echo "<tr><td>$numero x $i = " . ($numero * $i) . "</td></tr>";
+                }
             }
             echo "</table>";
             ?>
             <button type="submit">Enviar</button>
-            <button type="reset">Borrar</button>
         </form>
+        <a href="todasTablas.php" style="margin-left: 1%;"><button>Todas las tablas</button></a>
     </div>
 </body>
 
