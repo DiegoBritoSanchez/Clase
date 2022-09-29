@@ -60,18 +60,66 @@ function calculoFCM() {
   let sexo;
   let p = document.getElementById("fmcP");
   let fcm;
+  let control;
 
-  edad = prompt("Introduzca su edad", "25");
-  sexo = prompt("Introduzca su sexo", "Hombre/Mujer");
+  
+  do {
+    control = true;
+    edad = prompt("Introduzca su edad", "25");
+    sexo = prompt("Introduzca su sexo", "Hombre/Mujer");
+    if (sexo.toLowerCase() == "hombre") {
+      fcm = (209 - 0.7 * edad).toFixed(2);
+      control = false;
+    } else if (sexo.toLowerCase() == "mujer") {
+      fcm = (214 - 0.8 * edad).toFixed(2);
+      control = false;
+    }
+  } while (control || edad < 1);
 
-  if (sexo.toLowerCase() == "hombre") {
-    fcm = (209 - 0.7 * edad).toFixed(2);
-  } else if (sexo.toLowerCase() == "mujer") {
-    fcm = (214 - 0.8 * edad).toFixed(2);
+  p.innerHTML = "Su frecuencia cardíaca es " + fcm + "</br> Su zona de recuperación oscila entre " + (fcm * 0.6).toFixed(2) +
+    " y " + (fcm * 0.7).toFixed(2)+"</br>";
+  p.innerHTML += "Su zona earóbica oscila entre " + (fcm * 0.7).toFixed(2) + " y " + (fcm * 0.8).toFixed(2)+"</br>";
+  p.innerHTML += "Su zona anaebórica oscila entre " + (fcm * 0.8).toFixed(2) + " y " + (fcm * 0.9).toFixed(2)+"</br>";
+  p.innerHTML += "Su zona línea roja oscila entre " + (fcm * 0.9).toFixed(2) + " y " + fcm +"</br>";
+}
+
+function categoria() {
+  let edad = prompt("Introduzca su edad", "25");
+  document.getElementById("cat").innerHTML = "";
+  document.getElementById("cat2").innerHTML = "";
+  document.getElementById("cat3").innerHTML = "";
+  document.getElementById("cat4").innerHTML = "";
+  document.getElementById("cat5").innerHTML = "";
+  document.getElementById("cat6").innerHTML = "";
+  document.getElementById("cat7").innerHTML = "";
+  document.getElementById("cat8").innerHTML = "";
+
+  
+  switch (true) {
+    case  edad < 8:
+        document.getElementById("cat").innerHTML = "<==";
+      break;
+    case  edad <= 10:
+        document.getElementById("cat2").innerHTML = "<==";
+      break;
+    case  edad <= 12:
+        document.getElementById("cat3").innerHTML = "<==";
+      break;
+    case  edad <= 14:
+        document.getElementById("cat4").innerHTML = "<==";
+      break;
+    case  edad <= 16:
+        document.getElementById("cat5").innerHTML = "<==";
+      break;
+    case  edad <= 18:
+        document.getElementById("cat6").innerHTML = "<==";
+      break;
+    case  edad <= 20:
+        document.getElementById("cat7").innerHTML = "<==";
+      break;
+    case  edad >= 21:
+        document.getElementById("cat8").innerHTML = "<==";
+      break;
   }
 
-  p.innerHTML +=
-    "Su frecuencia cardíaca es" +
-    fcm +
-    "</br> Su zona de recuperación oscila entre "+fcm*0.6+" y "+fcm*0.7;
 }

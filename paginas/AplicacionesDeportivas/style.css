@@ -1,5 +1,6 @@
 body {
-    
+  background-color: black;
+  text-align: center;
 }
 
 .contenedor {
@@ -13,4 +14,14 @@ body {
   -webkit-transform: translatex(-50%);
   -moz-transform: translatex(-50%);
   -o-transform: translatex(-50%);
+}
+
+table {
+  margin: auto;
+  padding: 1em;
+}
+
+tr, td, th {
+  border: 1px solid green;
+  padding: 1em;
 }
