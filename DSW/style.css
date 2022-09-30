@@ -16,9 +16,45 @@ body {
   -o-transform: translatex(-50%);
 }
 
-input,
-label,
-select {
+.grid{
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.grid-interion{
+  flex-basis: 50%;
+}
+
+.menu {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-interior > a {
+  width: 200px;
+  background-color: aqua;
+  margin: 1em 1em;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.menu-interior > a {
+  background-color: aquamarine;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.menu-interior > a {
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
+input,label,select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -74,4 +110,20 @@ button:hover {
   background-color: blueviolet;
   color: aqua;
   font-size: larger;
+}
+
+table {
+  margin: auto;
+  margin-top: 25px;
+  text-align: center;
+  width: 40%;
+  text-transform: uppercase;
+}
+
+td, th, tr {
+  border: 2px solid white;
+}
+
+.log {
+  margin-left: 5%;
 }

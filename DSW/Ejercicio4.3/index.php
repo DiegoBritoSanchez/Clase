@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <a target="_self" href="../" id="volver">Volver</a><br>
+    <a target="_self" href="../menu.html" id="volver">Volver</a><br>
     <div id="contenedor">
-        <form action="index.php" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <label for="number">Tabla de multiplicar:</label>
             <input type="number" name="number" id="">
             <?php

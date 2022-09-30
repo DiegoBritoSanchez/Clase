@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <a target="_self" href="../" id="volver">Volver</a><br>
+    <a target="_self" href="../menu.html" id="volver">Volver</a><br>
     <div id="contenedor">
-        <form action="index.php" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <label for="number">Introduce un número</label>
             <input type="number" name="number" id="">
             <label for="number2">Introduce otro número</label>
