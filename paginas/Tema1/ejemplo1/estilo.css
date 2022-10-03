@@ -1,0 +1,69 @@
+body {
+  background-color: darkblue;
+  text-align: justify;
+}
+h1 {
+  color: aqua;
+  position: relative;
+  left: 25%;
+}
+h3,
+h2 {
+  color: aquamarine;
+  position: relative;
+  left: 25%;
+}
+ul > li {
+  list-style: square;
+  position: relative;
+  left: 25%;
+}
+
+ol > li {
+  list-style: upper-roman;
+}
+li {
+  color: beige;
+  padding-top: 1em;
+
+}
+img {
+  width: 50%;
+  position: relative;
+  left: 25%;
+}
+#contenedor {
+  width: 50%;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translatex(-50%);
+  transform: translatex(-50%);
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  -o-transform: translatex(-50%);
+}
+button {
+  padding: 1em;
+  margin: 5px 15px 5px 0px;
+  position: relative;
+  color: aqua;
+  background-color: blueviolet;
+  text-transform: uppercase;
+  left: 45%;
+  -ms-transform: translatex(-50%);
+  transform: translatex(-50%);
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  -o-transform: translatex(-50%);
+}
+button:hover {
+  background-color: blueviolet;
+  color: aqua;
+  font-size: larger;
+}
+#pre {
+  border: 1px solid yellow;
+  padding: 0em 1em 0em 1em;
+}
+
