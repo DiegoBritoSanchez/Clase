@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="color-scheme" content="light">
+    <title>Document</title>
+    <script>
+        function switchTheme() {
+            const theme = document.getElementById("theme").value;
+            document.getElementsByTagName("meta")[2].content = theme;
+        }
+    </script>
+</head>
+<body>
+    <select name="" id="theme" onChange="switchTheme()">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</body>
+</html>
