@@ -6,6 +6,7 @@ let solucion = document.getElementById("solucion");
 let entrada = document.getElementById("entrada");
 let tiempo = document.getElementById("tiempo");
 let intervalo;
+let contador = 5;
 
 //Obtenemos una palabra aleatoria e la lista
 function aleatorio() {
@@ -32,11 +33,21 @@ function escribe() {
   for (let index = 0; index < palabra.length; index++) {
     span = document.getElementById("span" + index);
     if (entrada.value == palabra.charAt(index)) {
-      console.log(index);
-      console.log(entrada.value);
       span.innerHTML = entrada.value;
     }
   }
+  if (contador > 0) {
+    if (!palabra.includes(entrada.value)) {
+      console.log(contador);
+      contador--;
+      document.getElementById("contador").innerHTML = contador + " intentos.";
+    }
+  } else {
+    document.getElementById("contador").innerHTML = "Te has quedado sin intentos";
+    clearInterval(intervalo);
+    return;
+  }
+
   entrada.value = "";
   if (span.innerHTML != "*") {
     clearInterval(intervalo);
