@@ -41,10 +41,10 @@
                         <input type='radio' name='dia' id='viernes' value='Viernes' />
                     </td>
                     <td><label for="sabado">Sábado</label>
-                        <input type='radio' name='dia' id='sabado' value='sabado' />
+                        <input type='radio' name='dia' id='sabado' value='Sabado' />
                     </td>
                     <td><label for="domingo">Domingo</label>
-                        <input type='radio' name='dia' id='domingo' value='domingo' />
+                        <input type='radio' name='dia' id='domingo' value='Domingo' />
                     </td>
                 </tr>
             </table>
@@ -63,22 +63,22 @@
                         <input type='radio' name='idioma' id='italiano' value='2' />
                     </td>
                 </tr>
+                <tr>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"><button type="submit">Enviar</button></td>
+                </tr>
             </table>
         </form>
         <table>
-            <?php
-            $pares = array(0, 2, 4, 6, 8, 10, 12, 14, 16, 18);
-            if (isset($_POST['par'])) {
-                if ($_POST['par'] <= 10) {
-                    echo "<th>Lista de pares</th>";
-                    for ($i = 0; $i < $_POST['par']; $i++) {
-                        echo "<tr><td>" . $pares[$i] . "</td></tr>";
+            
+                    <?php
+                    if (isset($_POST['dia']) && isset($_POST['idioma'])) {
+                        echo "<tr><th>Traducción del día seleccionado</th></tr>";
+                        echo "<tr><td>";
+                        echo $diccionario[$_POST['idioma']][$_POST['dia']];
+                        echo "</tr></td>";
                     }
-                } else {
-                    echo "<tr><td>Por favor introduzca un valor válido</td></tr>";
-                }
-            }
-            ?>
+                    ?>
         </table>
 
     </div>

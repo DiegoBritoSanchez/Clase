@@ -19,15 +19,12 @@
         </form>
         <table>
             <?php
-            $pares = array(0, 2, 4, 6, 8, 10, 12, 14, 16, 18);
             if (isset($_POST['par'])) {
-                if ($_POST['par'] <= 10) {
-                    echo "<th>Lista de pares</th>";
-                    for ($i = 0; $i < $_POST['par']; $i++) {
-                        echo "<tr><td>" . $pares[$i] . "</td></tr>";
-                    }
-                } else {
-                    echo "<tr><td>Por favor introduzca un valor válido</td></tr>";
+                echo "<th>Lista de pares</th>";
+                $par = $_POST['par'];
+                for ($i = 0; $i < $par; $i++) {
+                    $j = $i * 2;
+                    echo "<tr><td>" . $j . "</td></tr>";
                 }
             }
             ?>
