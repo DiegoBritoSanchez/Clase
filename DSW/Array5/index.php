@@ -14,52 +14,59 @@
     <div id="contenedor">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <label for="usu">Usuario</label>
-            <input type="text" name="usu">
+            <input type="text" name="usu" placeholder="admin // diego">
             <label for="pswd">Contraseña</label>
-            <input type="password" name="pswd" id="">
+            <input type="password" name="pswd" id="" placeholder="admin // qwerty">
             <input type="submit" value="Enviar">
         </form>
-        <?php
-        function limpiar($data)
-        {
-            $data = trim($data);
-            $data = htmlentities($data);
-            $data = htmlspecialchars($data);
-            $data = stripslashes($data);
-            return $data;
-        }
-
-        $usuarios = array(
-            array("admin", "admin", 0),
-            array("diego", "qwerty", 0),
-            array("prueba", "prueba", 1),
-            array("prueba2", "1234", 1)
-        );
-
-        $usu = limpiar($_POST['usu']);
-        $pass = limpiar($_POST['pswd']);
-        $control = 0;
-
-        if (isset($_POST['usu']) && isset($_POST['pswd'])) {
-            while ($control < count($usuarios)) {
-                $controlAux = 0;
-                if ($usu == $usuarios[$control][0] && $pass == $usuarios[$control][1]) {
-                    $tipo = $usuarios[$control][2];
-                    if ($tipo == 0) {
-                        echo "Hola, bienvenid@ " . $usu . ", veo que eres ADMINISTRADOR y te voy a permitir ver todos los ejercicios";
-                    } else if ($tipo == 1) {
-                        echo "Hola, bievenid@" . $usu . ", veo que eres USUARIO REGISTRADO";
-                    }
-                    break;
+        <table>
+            <?php
+            function limpiar($data)
+            {
+                $data = trim($data);
+                $data = htmlentities($data);
+                $data = htmlspecialchars($data);
+                $data = stripslashes($data);
+                return $data;
+            }
+            function mensajeBienvenida($tipo, $usu)
+            {
+                if ($tipo == 0) {
+                    echo "<tr><td>Hola, bienvenid@ " . $usu . ", veo que eres ADMINISTRADOR y te voy a permitir ver todos los ejercicios</td></tr>";
+                    header("refresh:1.5;url=../menu.html");
+                } else if ($tipo == 1) {
+                    echo "<tr><td>Hola, bievenid@" . $usu . ", veo que eres USUARIO REGISTRADO, solo podrás ver la calculadora.</td></tr>";
+                    header("refresh:1.5;url=../Ejercicio4.2/");
                 }
-                $control++;
             }
-            if ($control == count($usuarios)) {
-                echo "prueba";
+            session_start();
+            $_SESSION['usuarios'] = array(
+                array("admin", "admin", 0),
+                array("diego", "qwerty", 0),
+                array("prueba", "prueba", 1),
+                array("prueba2", "1234", 1)
+            );
+
+            $control = 0;
+
+            if (isset($_POST['usu']) && isset($_POST['pswd'])) {
+                $usu = limpiar($_POST['usu']);
+                $pass = limpiar($_POST['pswd']);
+                while ($control < count($_SESSION['usuarios'])) {
+                    if ($usu == $_SESSION['usuarios'][$control][0] && $pass == $_SESSION['usuarios'][$control][1]) {
+                        $tipo = $_SESSION['usuarios'][$control][2];
+                        mensajeBienvenida($tipo, $usu);
+                        break;
+                    }
+                    $control++;
+                }
+                if ($control == count($_SESSION['usuarios'])) {
+                    echo "<tr><td>Veo que eres un usuario no registrado, procedemos a acceder al formulario de registro...</td></tr>";
+                    header("refresh:1.5;logeo.php");
+                }
             }
-            
-        }
-        ?>
+            ?>
+        </table>
     </div>
 </body>
 
