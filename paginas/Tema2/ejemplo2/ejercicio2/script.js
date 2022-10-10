@@ -36,8 +36,9 @@ function muestraCuotas() {
   let muestraDatos = document.getElementById("tablaCuota");
   muestraDatos.innerHTML = "<tr><th colspan=2>Datos inferiores a "+cuota.value+"</th></tr>";
   for (let index = 1; index < listaBuena.length; index++) {
-    if (listaBuena[index].split(";")[2] < cuota.value) {
+    if (parseInt(listaBuena[index].split(";")[2]) < cuota.value) {
         muestraDatos.innerHTML += "<tr><td>"+listaBuena[index].split(";")[0]+"</td><td>" + listaBuena[index].split(";")[1]+"</td></tr>";
+        
     }
   }
 }
