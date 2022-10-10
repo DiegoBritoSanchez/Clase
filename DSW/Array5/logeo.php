@@ -47,6 +47,7 @@
                     $usuarioNuevo = array($usu, $pass, $tipo);
                     if (array_push($listado, $usuarioNuevo)){
                         //print_r($_SESSION['usuarios']);
+                        session_destroy();
                         header("refresh:1.5;url=../Ejercicio4.2/index.php");
                     }
                 }
