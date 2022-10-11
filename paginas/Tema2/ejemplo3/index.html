@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 3 Valores Numéricos</title>
-  </head>
-  <body>
-    <div id="contenedor">
-      <h3>Elige una opción:</h3>
-      <input type="radio" name="menu" id="potencia" onclick="potencia()" />
-      <label for="potencia">Potencia</label><br />
-      <input type="radio" name="menu" id="raiz" onclick="raiz()" />
-      <label for="raiz">Raiz</label><br />
-      <input type="radio" name="menu" id="redondeo" onclick="redondeo()"/>
-      <label for="redondeo">Redondeo</label><br />
-      <input type="radio" name="menu" id="trigonometria" onclick="trigonometria()"/>
-      <label for="trigonometria">Trigonometría</label><br />
-      <div>
-        <span id="hidden"></span>
-        <table id="resultado"></table>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 3 Valores Numéricos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="contenedor">
+    <h3>Elige una opción:</h3>
+
+    <label for="potencia" class="rad-label">
+      <input type="radio" name="menu" id="potencia" onclick="potencia()" class="rad-input" />
+      <div class="rad-design"></div>
+      <div class="rad-text">Potencia</div>
+    </label>
+    <label for="raiz" class="rad-label">
+      <input type="radio" name="menu" id="raiz" onclick="raiz()" class="rad-input" />
+      <div class="rad-design"></div>
+      <div class="rad-text">Raiz</div>
+    </label>
+    <label for="redondeo" class="rad-label">
+      <input type="radio" name="menu" id="redondeo" onclick="redondeo()" class="rad-input" />
+      <div class="rad-design"></div>
+      <div class="rad-text">Redondeo</div>
+    </label>
+    <label for="trigonometria" class="rad-label">
+      <input type="radio" name="menu" id="trigonometria" onclick="trigonometria()" class="rad-input" />
+      <div class="rad-design"></div>
+      <div class="rad-text">Trigonometria</div>
+    </label>
+    <div>
+      <span id="hidden"></span>
+      <table id="resultado"></table>
     </div>
-    <div id="contendor2">
-        <h3>Introduce el radio:</h3>
-        <input type="number" id="circulo">
-        <div>
-            <table id="resultado2"></table>
-        </div>
+  </div>
+  <div id="contendor2">
+    <h3>Introduce el radio:</h3>
+    <input type="number" id="circulo" />
+    <div>
+      <table id="resultado2"></table>
     </div>
-  </body>
-  <footer><script src="script.js"></script></footer>
+</body>
+<footer>
+  <script src="script.js"></script>
+</footer>
+
 </html>
