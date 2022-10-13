@@ -26,15 +26,10 @@ function calcSunday() {
     //Resetearel conteo cada vez que entra
     let count = 0;
     let day = input.value.split("/");
-    let month = (day[1] - 1);
-    if (month => 0 && month <= 11) {
-        console.log(month + " mes");
+    if (typeof day[1] != 'undefined' && day[1] > 0 && day[1] <= 12 && day[0] > 0 && day[0] <= 31) {
         let future = new Date(2100, 11, 31);
         for (let index = hoy.getFullYear(); index < future.getFullYear(); index++) {
-            let sundays = new Date(index, month, day[0]);
-            console.log(sundays.getDate() + " prueba");
-            console.log(sundays.getMonth() + " prueba2");
-            console.log(sundays.getFullYear() + " prueba3");
+            let sundays = new Date(index, day[1] - 1, day[0]);
             if (sundays.getDay() == 0) {
                 count++;
             }
