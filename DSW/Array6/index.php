@@ -119,7 +119,7 @@
                 <br><br><label for="web">Página Web:</label>
                 <input type="text" name="web">
                 <?php
-                echo webConfirm($_POST['web']) ? "" : "<span style='color:rgb(255,0,0);'>Campo erróneo</span>";
+                echo empty($_POST['web']) ? "" : (webConfirm($_POST['web']) ? "" : "<span style='color:rgb(255,0,0);'>Campo erróneo</span>");
                 ?>
                 <label for="mail1">Indique su dirección de correo:*</label>
                 <input type="text" name="mail1" id="">
