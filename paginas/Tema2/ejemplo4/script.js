@@ -52,7 +52,7 @@ function formats() {
     let date = format.value;
     let dateSplitted = date.split("/");
     let dateFormat = new Date(dateSplitted[2], dateSplitted[1] - 1, dateSplitted[0]);
-
+    console.log(dateSplitted[2]);
     if (typeof dateSplitted[2] != 'undefined' && dateSplitted[2] > 1500) {
         document.getElementById("formats").innerHTML = format.value;
         document.getElementById("formats").innerHTML += "</br>" + dateFormat.toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "long", day: "numeric" });
@@ -60,6 +60,25 @@ function formats() {
     } else {
         document.getElementById("formats").innerHTML = "";
     }
+}
 
+/**Cuarta parte */
 
+let formatH = document.getElementById("hour");
+formatH.addEventListener("input", formatHour);
+
+//Function
+function formatHour() {
+    let outputH = document.getElementById("formatH");
+    let dateH = formatH.value;
+    let dateSplittedH = dateH.split(":");
+    let dateFormatH = new Date(2022, 11, 31, dateSplittedH[0], dateSplittedH[1], dateSplittedH[2]);
+    console.log(dateFormatH);
+    if (typeof dateSplittedH[2] != 'undefined' && dateSplittedH[2] > 0) {
+        outputH.innerHTML = formatH.value;
+        outputH.innerHTML +=  "</br>Modelo USA " + dateFormatH.toLocaleTimeString('en-us');
+        outputH.innerHTML +=  "</br>Modelo español " + dateFormatH.toLocaleTimeString('es-es');
+    } else {
+        document.getElementById("formatH").innerHTML = "";
+    }
 }
