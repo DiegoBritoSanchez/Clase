@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplicación Deportiva</title>
+  <style>
+    body {
+      background-color: #4e54c8;
+      color: #e6e6e6;
+      text-align: center;
+    }
+
+    table {
+      padding-top: 1cm;
+      margin: auto;
+      text-align: center;
+    }
+
+    tr,
+    td,
+    th {
+      border: 2px solid #0fff03;
+      padding: 1em;
+    }
+
+    button {
+      width: 20%;
+      color: #e6e6e6;
+      background-color: #333;
+      padding: 5px;
+      border-radius: 1em;
+      -webkit-border-radius: 1em;
+      -moz-border-radius: 1em;
+      -ms-border-radius: 1em;
+      -o-border-radius: 1em;
+    }
+
+    p {
+      text-transform: uppercase;
+      height: 24px;
+      margin: 40px 0px 100px;
+    }
+
+    #year,
+    #month,
+    #day {
+      padding-top: 0cm;
+      border: none;
+    }
+
+    .aviso {
+      margin: auto;
+      width: 150px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    
+  </script>
+  <!--Diego Brito Sánchez-->
+</head>
+<header>
+  <div id="headerT">
+    <table>
+      <tr>
+        <td id="year"></td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+<body onload="popUP()">
+  <div class="contenedor">
+    <button onclick="calculoIMC()" id="imcButton">Cálculo de IMC</button>
+    <p id="imcCalculo"></p>
+    <br />
+    <button onclick="calculoFCM()" id="fmc">Frecuencia cardiaca máxima</button><br />
+    <p id="fmcP"></p>
+    <button onclick="categoria()" id="imc">Cálculo de categoría</button>
+    <table>
+      <tr>
+        <th>Tabla de categorías</th>
+        <th>Su categoría</th>
+      </tr>
+      <tr>
+        <td>Pre-Benjamín</td>
+        <td id="cat"></td>
+      </tr>
+      <tr>
+        <td>Benjamín</td>
+        <td id="cat2"></td>
+      </tr>
+      <tr>
+        <td>Alevin</td>
+        <td id="cat3"></td>
+      </tr>
+      <tr>
+        <td>Infantil</td>
+        <td id="cat4"></td>
+      </tr>
+      <tr>
+        <td>Cadete</td>
+        <td id="cat5"></td>
+      </tr>
+      <tr>
+        <td>Juvenil</td>
+        <td id="cat6"></td>
+      </tr>
+      <tr>
+        <td>Junior</td>
+        <td id="cat7"></td>
+      </tr>
+      <tr>
+        <td>Senior</td>
+        <td id="cat8"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+<footer class="footer">
+  <p onclick="avisoLegal()" class="aviso">Aviso legal</p>
+  <script src="script.js"></script>
+</footer>
+
+</html>
