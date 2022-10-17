@@ -12,6 +12,7 @@
 <body>
     <a target="_self" href="../menu.html" id="volver">Volver</a><br>
     <?php
+    error_reporting(0);
     $ciclo = "Me gustaría probar el clico de Desarrollo aplicaciones web";
     $aprobar = "Me gustaría aprobar el módulo profesional de DSW";
     function prueba()

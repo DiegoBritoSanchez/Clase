@@ -12,6 +12,7 @@
 <body>
     <a target="_self" href="index.html" id="volver">Volver</a>
     <?php
+    error_reporting(0);
     $nombre = $_POST['nombre'];
     $sueldo = $_POST['sueldo'];
     $ipc = $_POST['ipc'];

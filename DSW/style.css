@@ -22,7 +22,7 @@ body {
 }
 
 .grid-interion{
-  flex-basis: 50%;
+  flex-basis: 70%;
 }
 
 .menu {
@@ -123,7 +123,6 @@ table {
 td, th, tr {
   border: 2px solid white;
 }
-
 .log {
   margin-left: 5%;
 }

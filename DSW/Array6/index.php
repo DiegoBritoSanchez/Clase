@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array 6</title>
-</head>
+<?php
+include 'php/cabecera.inc';
+?>
 
 <body>
     <?php
@@ -35,6 +29,8 @@
                 if ($mail1 != $mail2) {
                     return false;
                 }
+            } else {
+                return false;
             }
         }
         return true;
@@ -50,13 +46,12 @@
     function webConfirm($data)
     {
         if (required($data)) {
-            if(filter_var($data, FILTER_VALIDATE_URL)){
+            if (filter_var($data, FILTER_VALIDATE_URL)) {
                 return true;
             };
         }
         return false;
     }
-
 
     //Comprobamos el envío del formulario
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -84,10 +79,8 @@
         $comment = limpiar($_POST['textA']);
     }
     ?>
-    <a target="_self" href="../menu.html" id="volver">Volver</a><br>
     <div id="contenedor">
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-            <h3>FORMULARIO</h3>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" ENCTYPE="multipart/form-data">
             <fieldset>
                 <legend>Datos personales</legend>
                 <label for="name">Nombre:*</label>
@@ -154,6 +147,8 @@
                     <input type="radio" name="fruta" id="apple" value="manzana"><label for="apple">Manazana</label>
                     <input type="radio" name="fruta" id="orange" value="naranja"><label for="orange">Naranja</label>
                     <input type="radio" name="fruta" id="pear" value="pera"><label for="pear">Pera</label>
+                    <input type="radio" name="fruta" id="otra"><label for="upload">Otra:</label>
+                    <input type="file" name="upload" id="upload" accept="*.svg">
                     <h4>Cambia estilo de la pagina</h4>
                     <input type="checkbox" name="styleB" id="styleB" value="bkground"><label for="styleB">Color del fondo de la página</label>
                     <br><input type="checkbox" name="styleC" id="styleC" value="color"><label for="styleC">Color de la letra de la página</label>
@@ -178,15 +173,30 @@
                     }
                     echo "</tr>";
                     echo "<tr><td>Su fruta favorita es:</td></tr>";
-                    echo "<tr><td><img src='svg/$fruit.svg' alt='$fruit'></td></tr>";
-                    if ($_POST['styleB'] == 'bkground' && $_POST['styleC'] == 'color') {
-                        echo "<body style = 'color: #D66D5E; background-color: ##6F63C9'></body>";
-                    } else if ($_POST['styleB'] == 'bkground') {
-                        echo "<body style = 'background-color: ##6F63C9'></body>";
-                    } else if ($_POST['styleC'] == 'color') {
-                        echo "<body style = 'color: #D66D5E'></body>";
+                    if ($fruit == 'otra') {
+                        $type = $_FILES['upload']['type'];
+                        $size = $_FILES['upload']['size'];
+                        $archive = $_FILES['upload']['name'];
+                        $temp = $_FILES['upload']['tmp_name'];
+                        if (strpos($type, "svg")) {
+                            move_uploaded_file($temp, 'svg/' . $archive);
+                            echo "<tr><td><img src='svg/$archive' alt='$archive'></td></tr>";
+                        } else {
+                            echo "Fallo";
+                        }
+                    } else {
+                        echo "<tr><td><img src='svg/$fruit.svg' alt='$fruit'></td></tr>";
                     }
                     echo "<tr><td></td>$comment</tr>";
+                }
+                if ($_POST['styleB'] == 'bkground' && $_POST['styleC'] == 'color') {
+                    echo "<body style = 'color: #D66D5E; background-color: #6F63C9'></body>";
+                } else if ($_POST['styleB'] == 'bkground') {
+                    echo "<body style = 'background-color: #6F63C9'></body>";
+                } else if ($_POST['styleC'] == 'color') {
+                    echo "<body style = 'color: #D66D5E'></body>";
+                }
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
                 ?>
             </table>
@@ -194,5 +204,8 @@
         </form>
     </div>
 </body>
+<?php
+include 'php/pie.inc';
+?>
 
 </html>

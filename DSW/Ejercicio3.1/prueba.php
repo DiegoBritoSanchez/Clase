@@ -10,6 +10,7 @@
 <body>
 <a target="_self" href="index.html" id="volver">Volver</a>
     <?php 
+    error_reporting(0);
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
     echo "<h1>Tus numeros son $num1 y $num2. Su suma es ".$num1+$num2."
