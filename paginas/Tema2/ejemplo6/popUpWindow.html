@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="script.js"></script>
+    <script>
+        // Escribimos la función que escribirá la primera parte de la tarea
+
+
+        // Función para realizar un iframe con el contenido de la página que le pasemos
+        function crearframe(pagina) {
+            // creamos el elemento
+            var miIframe = document.createElement("iframe");
+            // le asignamos un identificador
+            miIframe.id = "miIframe";
+            // le cargamos la página recibida
+            miIframe.src = pagina;
+            // asignamos el ancho del marco
+            miIframe.style.width = '800px';
+            // asignamos el alto del marco
+            miIframe.style.height = '600px';
+            // ponemos el elemento 'miIframe' dentro de la variable 'control'
+            var control = document.getElementById("miIframe")
+            // comprobamos si 'control' no contiene nada para poder añadirlo al documento
+            if (control == null)
+                document.body.appendChild(miIframe);
+        }
+        function cierraVentana() {
+            // Cerramos esta ventana emergente
+            this.close();
+        }
+    </script>
+</head>
+
+<body onload="content()">
+    <h3 id="title"></h3>
+    <table id="information">
+
+    </table>
+</body>
+
+</html>
+<!--
+<body>
+    
+    <script type="text/javascript" LANGUAGE="JavaScript">
+        // Imprimimos todos los datos solicitados
+        cuerpo();
+        // Ponemos un boton para cerrar esta ventana
+        document.write("<form id='miFor' action=''>");
+        document.write("	<input type='button' value='Cerrar ventana' id='abrir' onclick='cierraVentana()' />");
+        document.write("</form>");
+    </script>
+</body>
+
+</html>-->
