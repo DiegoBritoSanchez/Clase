@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        table{
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
-    <button onclick="newWindow()">Click Me!</button>
+
+<body onload="parte2()">
+    <button onclick="newWindow()">Click Me!</button><br><br>
+    <table class="table table-sm table-primary table-hover align-self-center">
+        <tbody id="result"></tbody>
+    </table>
 </body>
 <footer>
     <script src="script.js"></script>
 </footer>
+
 </html>
