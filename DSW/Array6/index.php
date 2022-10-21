@@ -196,8 +196,6 @@ include 'php/cabecera.inc';
                 } else if ($_POST['styleC'] == 'color') {
                     echo "<body style = 'color: #D66D5E'></body>";
                 }
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                }
                 ?>
             </table>
 
