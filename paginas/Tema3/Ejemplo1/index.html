@@ -11,24 +11,39 @@
             cursor: pointer;
         }
     </style>
+
 </head>
 
 <body>
-    <b onclick="total()">En el array hay: </b>
-    <p id="total"></p>
-    <b onclick="list()">Todos los elementos: </b>
-    <p id="list"></p>
-    <b onclick="listI()">Todos los elementos en orden inverso: </b>
-    <p id="listI"></p>
-    <b onclick="sorted()">Elementos ordenados alfabéticamente: </b>
-    <p id="alphabetical"></p>
-    <b onclick="pushed()">Elemnto añadido al final: </b>
-    <p id="pushed"></p>
-    <b onclick="shifted()">Elemnto añadido al principio: </b>
-    <p id="shifted"></p>
+    <div id="u4e1">
+        <b onclick="total('total')">En el array hay: </b>
+        <p id="total"></p>
+        <b onclick="list('list')">Todos los elementos: </b>
+        <p id="list"></p>
+        <b onclick="listI('listI')">Todos los elementos en orden inverso: </b>
+        <p id="listI"></p>
+        <b onclick="sorted('alphabetical')">Elementos ordenados alfabéticamente: </b>
+        <p id="alphabetical"></p>
+        <b onclick="pushed('pushed', 'prueba')">Elemento añadido al final: </b>
+        <p id="pushed"></p>
+        <b onclick="unshift('unshift', 'prueba')">Elemento añadido al principio: </b>
+        <p id="unshift"></p>
+        <b onclick="pop('pop')">Borrar elemento al final: </b>
+        <p id="pop"></p>
+        <b onclick="shift('shift')">Borrar elemento al principio: </b>
+        <p id="shift"></p>
+        <b onclick="show('show')">Buscar elemento (posición numérica)</b>
+        <p id="show"></p>
+        <b onclick="showI('showI')">Buscar elemento (nombre)</b>
+        <p id="showI"></p>
+        <b onclick="showInterval('showInterval')">Buscar elementos (intervalo)</b>
+        <p id="showInterval"></p>
+    </div>
+
 </body>
 <footer>
-    <script src="script.js"></script>
+
 </footer>
+<script src="script.js"></script>
 
 </html>
