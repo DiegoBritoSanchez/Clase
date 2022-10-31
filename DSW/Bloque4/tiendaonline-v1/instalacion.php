@@ -1,9 +1,9 @@
 <?php
 
 /**
- * ! create user 'diego'@'localhost' identified by '1234';
- * ! grant all on tiendavirtual.* to 'diego'@'localhost' with grant OPTION;
- * ! grant CREATE USER on *.* to 'diego'@'localhost';
+ * ! create user '#####'@'localhost' identified by '#####'
+ * ! grant all on #####.* to '######'@'localhost' with grant OPTION;
+ * ! grant CREATE USER on *.* to '######'@'localhost';
  */
 $serverName = 'localhost';
 $user = 'root';
@@ -50,19 +50,20 @@ try {
         `poblacion` varchar(255) DEFAULT NULL,
         `pais` varchar(255) DEFAULT NULL,
         `dninif` varchar(255) DEFAULT NULL,
-        PRIMARY KEY (`id`)
-    );
+        PRIMARY KEY (`id`));
+
         INSERT INTO `clientes` (`id`, `nombre`, `apellidos`, `email`, `usuario`, `contrasena`, `telefono`, `movil`, `fax`, `direccioncalle`, `codigopostal`, `poblacion`, `pais`, `dninif`) VALUES
             (1, 'Jorge', 'Hernández', 'jorge.evagd@gmail.com', 'jorge', '1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
             (2, 'Juan', 'Lopez', 'info@gmail.com', 'juan', '1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
         CREATE TABLE IF NOT EXISTS `imagenesproductos` (
             `id` int(100) NOT NULL AUTO_INCREMENT,
             `idproducto` int(100) DEFAULT NULL,
             `imagen` varchar(255) DEFAULT NULL,
             `titulo` varchar(255) DEFAULT NULL,
             `descripcion` varchar(255) DEFAULT NULL,
-            PRIMARY KEY (`id`)
-        );
+            PRIMARY KEY (`id`));
+
         INSERT INTO `imagenesproductos` (`id`, `idproducto`, `imagen`, `titulo`, `descripcion`) VALUES
             (1, 1, 'lampara1a.png', 'Título 1', 'Descripción 1'),
             (2, 1, 'lampara1b.png', 'Título de la segunda imagen', 'Descripción'),
@@ -70,13 +71,14 @@ try {
             (4, 2, 'lampara2b.png', 'Título', 'Descripción'),
             (5, 3, 'lampara3a.png', 'Título', 'Descripción'),
             (6, 3, 'lampara3b.png', 'Título', 'Descripción');
+
         CREATE TABLE IF NOT EXISTS `lineaspedido` (
             `id` int(100) NOT NULL AUTO_INCREMENT,
             `idpedido` int(100) DEFAULT NULL,
             `idproducto` int(100) DEFAULT NULL,
             `unidades` int(100) DEFAULT NULL,
-            PRIMARY KEY (`id`)
-        );
+            PRIMARY KEY (`id`));
+
         INSERT INTO `lineaspedido` (`id`, `idpedido`, `idproducto`, `unidades`) VALUES
             (3, 5, 1, 1),
             (4, 5, 2, 1),
@@ -110,13 +112,13 @@ try {
             (32, 19, 2, 1),
             (33, 19, 3, 1),
             (34, 19, 2, 1);
+
         CREATE TABLE IF NOT EXISTS `pedidos` (
             `id` int(100) NOT NULL AUTO_INCREMENT,
             `idcliente` int(100) DEFAULT NULL,
             `fecha` varchar(100) DEFAULT NULL,
             `estado` varchar(100) DEFAULT NULL,
-            PRIMARY KEY (`id`)
-          );
+            PRIMARY KEY (`id`));
           
       ";
 } catch (PDOException $e) {
