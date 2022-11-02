@@ -86,7 +86,6 @@ function building(street, num, cp) {
         for (let i = 0; i < this.floor; i++) {
             console.log(this.doors[i]);
             for (let j = 0; j < this.doors[i]; j++) {
-                console.log("asasasas");
                 alert("El propietario del piso " + j + " de la planta " + i + " es " + this.owners[i][j] + "\n");
             }
         }
