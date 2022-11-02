@@ -72,7 +72,6 @@ function building(street, num, cp) {
     function modifyCp(cp) {
         this.cp = cp;
     }
-
     function printStreet() {
         return this.street;
     }
