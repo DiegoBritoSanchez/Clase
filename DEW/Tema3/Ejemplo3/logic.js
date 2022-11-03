@@ -5,8 +5,8 @@ menuButton.addEventListener("click", menu);
 function building(street, num, cp) {
     //Iniciamos los parámetros base de los edificios
     this.street = street;
-    this.num = num;
-    this.cp = cp;
+    this.num = parseInt(num);
+    this.cp = parseInt(cp);
     //Iniciamos los pisos del edificio
     this.floor = 0;
     this.doors = new Array();
@@ -32,12 +32,14 @@ function building(street, num, cp) {
         } else {
             //Guardamos el número de plantas existentes en el edificio
             let actuallyFloors = this.owners.length;
+            console.log(actuallyFloors + " af");
             //Asignamos el número de puertas pasado como parámetro al array de puertas de cada planta
             for (let i = 0; i < this.floor + floor; i++) {
-                this.doors[i] = door;
+                this.doors[i] = door - 1;
             }
             //Añadimos las plantas pasadas como parámetro a las plantas existentes en el edificio
-            this.floor += parseInt(floor);
+            this.floor = this.floor + parseInt(floor - 1);
+            console.log(this.floor + " floor");
             //Ahora para cada propietario añadimos una segunda dimension en el array para asignarle una puerta
             for (let i = actuallyFloors; i <= this.floor; i++) {
                 this.owners[i] = new Array();
@@ -52,14 +54,11 @@ function building(street, num, cp) {
     //Añadir propietarios. Pasamos como parámeto de control la planta y la puerta a la que pertenece
     function addOwner(name, floor, door) {
         //Comprobamos que los datos son correctos
-        console.log("Plantas: " + this.owners.length);
-        console.log("Puertas: ");
-        if ((floor < 0 || door < 0) || (floor > this.owners.length - 1)) {
+        if ((floor < 0 || door < 0) || (floor > this.owners.length)) {
             alert("Los datos introducidos son incorrectos.");
             menu();
         } else {
-
-            this.owners[floor][door] = name;
+            this.owners[floor - 1][door - 1] = name;
         }
     }
 
@@ -72,21 +71,21 @@ function building(street, num, cp) {
     function modifyCp(cp) {
         this.cp = cp;
     }
-    function printStreet() {
-        return this.street;
+    function printStreet(street) {
+        return this.street = street;
     }
-    function printNum() {
-        return this.num;
+    function printNum(num) {
+        if (num > 0) { return num };
+        return "S/N";
     }
-    function printCp() {
-        return this.cp;
+    function printCp(cp) {
+        return cp;
     }
     function printFloor() {
-        alert("Listado de propietarios de la calle " + this.printStreet());
-        for (let i = 0; i < this.floor; i++) {
-            console.log(this.doors[i]);
-            for (let j = 0; j < this.doors[i]; j++) {
-                alert("El propietario del piso " + j + " de la planta " + i + " es " + this.owners[i][j] + "\n");
+        alert("Listado de propietarios de la calle " + this.printStreet(street));
+        for (let i = 0; i <= this.floor; i++) {
+            for (let j = 0; j <= this.doors[i]; j++) {
+                alert("El propietario del piso " + (j + 1) + " de la planta " + (i + 1) + " es " + this.owners[i][j] + "\n");
             }
         }
     }
@@ -96,6 +95,8 @@ function building(street, num, cp) {
     }
     //Sumamos un edificio cada vez que creamos
     buildingCount++;
+    output.innerHTML += "<td>Se ha creado un edificio en calle: " + printStreet(street) + ", nº: " + printNum(num) + ", CP: " + printCp(cp) + "</td>";
+
 }
 function menu() {
     let opt;
@@ -104,8 +105,8 @@ function menu() {
         "\n 2. Crear edificio." +
         "\n 3. Añadir propietario." +
         "\n 4. Añade plantas y puertas." +
-        "\n 5. Imprime un piso." +
-        "\n 6. Imprimir."));
+        "\n 5. Imprimer datos." +
+        "\n 6. Insertar datos de prueba."));
     switch (opt) {
         case 1:
             alert("Hay " + buildingCount + " edificios");
@@ -120,19 +121,25 @@ function menu() {
             let nameP = window.prompt("¿Nombre del propietario?", "José Luís");
             let floor = window.prompt("¿Piso del propietario?", 1);
             let door = window.prompt("¿Puerta del propietario?", 1);
-            block[0].addFloorDoor(1, 3);
-            block[0].addOwner(nameP, floor, door);
+            let blockN = (window.prompt("¿Bloque del propietario?", 1) - 1);
+            block[blockN].addOwner(nameP, floor, door);
             break;
         case 4:
             let opt = window.prompt("Pisos a añadir", 1);
             let opt2 = window.prompt("Puertas a añadir", 1);
-            block[0].addFloorDoor(opt, opt2);
+            let blockNm = (window.prompt("¿En qué bloque va a añadir el piso?", 1) - 1);
+            block[blockNm].addFloorDoor(opt, opt2);
             break;
         case 5:
             block[0].printFloor();
             break;
         case 6:
-            output.innerHTML = block[0].toString();
+            let edificioA = new building("García Prieto", 58, 15706);
+            block.push(edificioA);
+            let edificioB = new building("Camino Caneiro", 29, 32004);
+            block.push(edificioB);
+            let edificioC = new building("San Clemente", null, 15705);
+            block.push(edificioC);
             break;
         default:
             break;
