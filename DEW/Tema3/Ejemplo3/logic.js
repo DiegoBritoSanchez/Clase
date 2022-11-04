@@ -35,7 +35,7 @@ function building(street, num, cp) {
                 this.doors[i] = door - 1;
             }
             //Añadimos las plantas pasadas como parámetro a las plantas existentes en el edificio
-            this.floor = this.floor + parseInt(floor - 1);
+            this.floor = this.floor + parseInt(floor);
             output.innerHTML += "<tr><td>Se ha agregado un piso al edificio</td></tr>";
             //Ahora para cada propietario añadimos una segunda dimension en el array para asignarle una puerta
             for (let i = 0; i <= this.floor; i++) {
@@ -44,6 +44,9 @@ function building(street, num, cp) {
                     //Iniciamos cada propietario vacío
                     if (this.owners[i][e] == null) {
                         this.owners[i][e] = 0;
+                        console.log("propietario: " + this.owners[i][e]);
+                        console.log("planta: " + i);
+                        console.log("puerta: " + e);
                     }
                 }
             }
@@ -127,7 +130,8 @@ function menu() {
             block[blockNm].addFloorDoor(opt, opt2);
             break;
         case 5:
-            block[0].toString();
+            console.log(block[0].floor);
+            console.log(block[0].owners[3][0]);
             break;
         case 6:
             let edificioA = new building("García Prieto", 58, 15706);
