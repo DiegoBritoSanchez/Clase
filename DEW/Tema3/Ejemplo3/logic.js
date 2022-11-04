@@ -9,6 +9,7 @@ function building(street, num, cp) {
     this.cp = parseInt(cp);
     //Iniciamos los pisos del edificio
     this.floor = 0;
+    this.currentFloor = 0;
     this.doors = new Array();
     //Creamos un arrar de propietarios que sereán asignamos mas tarde a cada puerta
     this.owners = new Array();
@@ -35,16 +36,16 @@ function building(street, num, cp) {
                 this.doors[i] = door - 1;
             }
             //Añadimos las plantas pasadas como parámetro a las plantas existentes en el edificio
+            this.currentFloor = this.floor;
             this.floor = this.floor + parseInt(floor);
             output.innerHTML += "<tr><td>Se ha agregado un piso al edificio</td></tr>";
             //Ahora para cada propietario añadimos una segunda dimension en el array para asignarle una puerta
-            for (let i = 0; i <= this.floor; i++) {
+            for (let i = this.currentFloor; i <= this.floor; i++) {
                 this.owners[i] = new Array();
                 for (let e = 0; e <= this.doors[i]; e++) {
                     //Iniciamos cada propietario vacío
                     if (this.owners[i][e] == null) {
                         this.owners[i][e] = 0;
-                        console.log("propietario: " + this.owners[i][e]);
                         console.log("planta: " + i);
                         console.log("puerta: " + e);
                     }
@@ -61,6 +62,7 @@ function building(street, num, cp) {
             menu();
         } else {
             this.owners[floor - 1][door - 1] = name;
+            console.log("propietario: " + this.owners[floor - 1][door - 1]);
         }
     }
 
@@ -84,10 +86,16 @@ function building(street, num, cp) {
         return cp;
     }
     function printFloor() {
-        output.innerHTML += "<tr><td>Listado de propietarios de la calle " + this.printStreet(street) + "</td></tr>";
+        output.innerHTML += "<tr><td><b>Listado de propietarios de la calle " + this.printStreet(street) + "</b></td></tr>";
         for (let i = 0; i <= this.floor; i++) {
             for (let j = 0; j <= this.doors[i]; j++) {
-                output.innerHTML += "<tr><td>El propietario del piso " + (j + 1) + " de la planta " + (i + 1) + " es " + this.owners[i][j] + "</td></tr>";
+                let owner;
+                if (this.owners[i][j] != 0) {
+                    owner = this.owners[i][j];
+                } else {
+                    owner = "vacante";
+                }
+                output.innerHTML += "<tr><td>El propietario del piso " + (j + 1) + " de la planta " + (i + 1) + " es " + owner + "</td></tr>";
             }
         }
     }
@@ -120,18 +128,17 @@ function menu() {
             let nameP = window.prompt("¿Nombre del propietario?", "José Luís");
             let floor = window.prompt("¿Piso del propietario?", 1);
             let door = window.prompt("¿Puerta del propietario?", 1);
-            let blockN = (window.prompt("¿Bloque del propietario?", 1) - 1);
+            let blockN = window.prompt("¿Bloque del propietario?", 0);
             block[blockN].addOwner(nameP, floor, door);
             break;
         case 4:
             let opt = window.prompt("Pisos a añadir", 1);
             let opt2 = window.prompt("Puertas a añadir", 1);
-            let blockNm = (window.prompt("¿En qué bloque va a añadir el piso?", 1) - 1);
+            let blockNm = window.prompt("¿En qué bloque va a añadir el piso?", 0);
             block[blockNm].addFloorDoor(opt, opt2);
             break;
         case 5:
-            console.log(block[0].floor);
-            console.log(block[0].owners[3][0]);
+            block[window.prompt("Edificio a imprimir:")].printFloor();
             break;
         case 6:
             let edificioA = new building("García Prieto", 58, 15706);
@@ -148,6 +155,7 @@ function menu() {
             block[0].printFloor();
             block[0].addFloorDoor(1, 3);
             block[0].addOwner('Pedro Meijide', 3, 2);
+            block[0].printFloor();
             break;
         default:
             break;
