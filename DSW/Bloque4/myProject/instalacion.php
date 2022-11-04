@@ -9,37 +9,37 @@ $serverName = 'localhost';
 $user = 'root';
 $password = '';
 
+// * Admin credentials
+$serverName = "localhost";
+$userAdmin = 'adimn';
+$passwordAdmin = 'admin';
+$dbname = 'stoneStore';
+
 try {
     //Conexión como root para crear al usuario admin y la base de datos
     $conn = new PDO("mysql:host=$serverName;", $user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "create database if not exists tiendavirtual;";
-    $sql .= "create user if not exists 'diego'@'localhost' identified by '1234';";
-    $sql .= "grant all on tiendavirtual.* to 'diego'@'localhost' with grant OPTION;";
-    $sql .= "grant CREATE USER on *.* to 'diego'@'localhost';";
+    $sql = "create database if not exists $dbname;";
+    $sql .= "create user if not exists '$userAdmin'@'localhost' identified by '$passwordAdmin';";
+    $sql .= "grant all on $dbname.* to '$userAdmin'@'localhost' with grant OPTION;";
+    $sql .= "grant CREATE USER on *.* to '$userAdmin'@'localhost';";
     $conn->exec($sql);
 
-    echo "Base de datos y usuario admin creados";
+    echo "DataBase and Admin created successfully.";
 } catch (PDOException $e) {
     echo $sql . "</br>" . $e->getMessage();
 }
 
 $conn = $sql = null;
 
-$serverName = "localhost";
-$user = 'diego';
-$password = '1234';
-$dbname = 'tiendavirtual';
-
 try {
     //Entramos como admin para crear las tablas e insertar datos
-    $conn = new PDO("mysql:host=$serverName; dbname=$dbname", $user, $password);
+    $conn = new PDO("mysql:host=$serverName; dbname=$dbname", $userAdmin, $passwordAdmin);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = file_get_contents("./tiendaonline.sql");
+    $sql = file_get_contents("./stoneStore.sql");
     $conn->exec($sql);
-    echo "</br>Tablas creadas y datos insertados";
+    echo "</br>Tables created and datas inserted successfully.";
     header("refresh:3;url=.");
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-?>
