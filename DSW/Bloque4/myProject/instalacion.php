@@ -11,7 +11,7 @@ $password = '';
 
 // * Admin credentials
 $serverName = "localhost";
-$userAdmin = 'adimn';
+$userAdmin = 'admin';
 $passwordAdmin = 'admin';
 $dbname = 'stoneStore';
 

@@ -45,3 +45,7 @@ CREATE TABLE
     );
 /*admin*/
 INSERT INTO `users` (`id`, `name`, `psswd`, `email`) VALUES (NULL, 'admin', 'admin', 'admin@admin.com');
+/*producto*/
+INSERT INTO product values (null, 'piedra1', 'piedra1Descripcion', 19.99);
+/*imagenes*/
+INSERT INTO images values (null, 1, 'piedra1.png', null);

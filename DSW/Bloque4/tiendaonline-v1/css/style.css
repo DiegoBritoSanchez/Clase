@@ -6,3 +6,6 @@ body {
     padding: 15px 10px;
     text-transform: uppercase;
 }
+.img>tbody>tr>td, .img>tbody>tr>th{
+    width: 200px;
+}
