@@ -8,6 +8,17 @@
     <title>Tienda Online</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+    <style>
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            color: white;
+        }
+    </style>
 </head>
 
 <body>

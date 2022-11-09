@@ -4,6 +4,7 @@
         property="dct:title">TiendaOnline</span> by <span xmlns:cc="http://creativecommons.org/ns#"
         property="cc:attributionName">Diego Brito</span> is licensed under a Creative Commons Reconocimiento 4.0.
     Internacional License</a>.
+    <script src="js/script.js"></script>
 </footer>
 </body>
 <!-- <?php $conn = null;?> -->
