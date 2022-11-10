@@ -51,7 +51,8 @@ function capitalize() {
 function validate(opt) {
     value++;
     document.getElementById("intentos").innerHTML = "Intentos de envío del formulario: " + value;
-    if (validateNameSurname(this) && validateAge() && validatePhone() && validateEmail()) {
+    if (validateNameSurname(this) && validateAge() && validatePhone() && validateEmail() && validateNif() && validateProv() && validateDate() && validateHour()) {
+        confirmSub();
         return true;
     } else {
         opt.preventDefault();
@@ -70,7 +71,7 @@ function validateNameSurname(object) {
         if (form.elements[i].type == "text" && form.elements[i].value == "") {
             form.elements[i].className = "error";
             form.elements[i].focus();
-            document.getElementById("errores").innerHTML = "Error: " + form.elements[i].name.toUpperCase() + " no puede estar vacío";
+            document.getElementById("errores").innerHTML = form.elements[i].name.toUpperCase() + " no puede estar vacío";
             return false;
         }
     }
@@ -78,6 +79,7 @@ function validateNameSurname(object) {
 }
 // Validar la edad
 function validateAge() {
+    edad.className = "";
     if (isNaN(edad.value) || edad.value < 0 || edad.value > 105) {
         console.log(edad.value);
         errores.innerHTML = "La edad debe estar entre 0 y 105";
@@ -92,7 +94,7 @@ function validateAge() {
 // Validar telefono
 function validatePhone() {
     var pattern = /^[679]\d{8}$/;
-
+    telefono.className = "";
     if (!pattern.test(telefono.value)) {
         errores.innerHTML = "Sólo teléfonos que comiencen por 6 ó 9";
         telefono.className = "error";
@@ -105,9 +107,10 @@ function validatePhone() {
 }
 //Validar mail
 function validateEmail() {
-    var pattern = /^[\w-\.]{2,}@([\w-]{2,}\.)+([\w-]{2,4})$/;
+    email.className = "";
+    var pattern =  /^\w+@\w+\.\w+$/;
     if (!pattern.test(email.value)) {
-        errores.innerHTML = "ERROR: No es un email válido.";
+        errores.innerHTML = "No es un email válido.";
         email.focus();
         email.className = "error";
         return false;
@@ -116,14 +119,56 @@ function validateEmail() {
     return true;
 }
 //Validar nif
-function validateNif(){
-	var patron = /^\d{8}-[A-Z]$/;
-	if (!patron.test(nif.value)){
-		errores.innerHTML="ERROR: No es un número de NIF válido.";
-		nif.focus();
-		nif.className="error";	
-		return false;
-	}
-	nif.className="";	
-	return true;
+function validateNif() {
+    nif.className = "";
+    var patron = /^\d{8}[A-Z]$/;
+    if (!patron.test(nif.value)) {
+        errores.innerHTML = "No es un número de NIF válido.";
+        nif.focus();
+        nif.className = "error";
+        return false;
+    }
+    nif.className = "";
+    return true;
+}
+//Validar provincia
+function validateProv() {
+    provincia.className = "";
+    if (provincia.selectedIndex == 0) {
+        errores.innerHTML = "No ha seleccionado provincia.";
+        provincia.focus();
+        provincia.className = "error";
+        return false;
+    }
+    return true;
+}
+//Validar fecha
+function validateDate() {
+    fecha.innerHTML ="";
+    var pattern = /^\d+(\/|-)\d+(\/|-)\d+$/;
+    if (!pattern.test(fecha.value)) {
+        errores.innerHTML = "Formato de fecha incorrecto";
+        fecha.focus();
+        fecha.className = "error";
+        return false;
+    }
+    return true;
+}
+//Validar hora
+function validateHour() {
+    hora.innerHTML = "";
+    var pattern = /^\d{1,2}-\d{1,2}$/;
+    if (!pattern.test(hora.value)) {
+        errores.innerHTML = "Formato de hora incorrecto";
+        hora.focus();
+        hora.className = "error";
+        return false;
+    }
+    return true;
+}
+//Confirmar envío
+function confirmSub() {
+    if (confirm("Confirme el envío")) {
+        formulario.submit();
+    }
 }
