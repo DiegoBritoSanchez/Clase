@@ -1,5 +1,8 @@
 <?php include 'php/header.inc' ?>
 <?php include 'php/connect.inc' ?>
+<div class="log">
+    <a href="admin/">Admin</a>
+</div>
 <div class="container-sm justify-content-md-center ">
     <?php
     echo "<table class='table table-dark table-striped-columns table-borderless table-responsive table-hover my-pad text-center' id='productos'>";
