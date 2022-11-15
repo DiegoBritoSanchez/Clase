@@ -1,6 +1,6 @@
 // * <span><img src="icons/icons8-done-48.png" alt="" style="width: 36px; "></span>
 // todo pasar a un array todos los input del html
-var questions = document.querySelectorAll("#pregunta input[type=radio]");
+var questions = document.querySelectorAll("input[type=radio]");
 for (let i = 0; i < questions.length; i++) {
     questions[i].addEventListener("click", comprobar);
 }
@@ -23,6 +23,7 @@ function comprobar() {
                 newElement.innerHTML = "<img src='icons/cross.png' style='width: 36px;'>";
                 label[i].insertAdjacentElement('afterend', newElement);
             }
+            radioButton[i].removeEventListener("click", comprobar);
         }
     }
 }
