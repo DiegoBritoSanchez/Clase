@@ -1,19 +1,28 @@
 // * <span><img src="icons/icons8-done-48.png" alt="" style="width: 36px; "></span>
-// document.getElementById("pregunta1").innerHTML = 
-// console.log(document.querySelector("#pregunta1 #success-outlined"));
-document.querySelector("#pregunta1").addEventListener("click", comprobar);
-var newElement = document.createElement("span");
+// todo pasar a un array todos los input del html
+var questions = document.querySelectorAll("#pregunta input[type=radio]");
+for (let i = 0; i < questions.length; i++) {
+    questions[i].addEventListener("click", comprobar);
+}
+
 function comprobar() {
-    console.log(document.querySelector("#success-outlined2").checked);
-    if (document.querySelector("#success-outlined2").checked) {
-        if (document.querySelector("#success-outlined2").value == "Si") {
-            newElement.innerHTML = "<img src='icons/tick.png' style='width: 36px; '>";
-            document.querySelector("#success-outlined2 label").insertAdjacentElement('afterend', newElement);
-        } else {
-            newElement.innerHTML = "<img src='icons/wrong.png' style='width: 36px;'>";
-            document.querySelector("#success-outlined2 label").insertAdjacentElement('afterend', newElement);
+    var newElement = document.createElement("span");
+    var id = 0;
+    newElement.setAttribute('id', 'span' + id++);
+    var radioButton = [...document.querySelectorAll("input[type=radio]")];
+    var label = [...document.querySelectorAll("label")];
+    var options = ["Si", "No", "Ns"];
+    var control = Math.floor(Math.random() * options.length);
+
+    for (let i = 0; i < radioButton.length; i++) {
+        if (radioButton[i].checked && !document.getElementById("span" + id++)) {
+            if (radioButton[i].value == options[control]) {
+                newElement.innerHTML = "<img src='icons/tick.png' style='width: 36px;'>";
+                label[i].insertAdjacentElement('afterend', newElement);
+            } else if (!document.getElementById("span" + id++)){
+                newElement.innerHTML = "<img src='icons/cross.png' style='width: 36px;'>";
+                label[i].insertAdjacentElement('afterend', newElement);
+            }
         }
     }
 }
-
-
