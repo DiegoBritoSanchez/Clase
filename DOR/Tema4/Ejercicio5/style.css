@@ -1,0 +1,22 @@
+.header {
+    background-color: darkblue;
+    height: 100px;
+}
+
+.pagina {
+    margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+    .nav-link {
+        color: white;
+    }
+    
+    nav .navbar-nav li a {
+        color: white !important;
+    }
+    
+    nav .navbar-nav ul li a {
+        color: black !important;
+    }
+}

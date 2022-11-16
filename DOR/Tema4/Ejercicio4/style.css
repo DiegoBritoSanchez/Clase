@@ -1,7 +1,36 @@
+
 .miHeader{
     background-color: orange;
 }
+.miBody {
+    height: 500px;
+    background-color: red;
+}
+.miBody2{
+    background-color: aqua;
+}
+.row-footer{
+    background-color: yellow;
+}
 
-@media (max-width: 576) {
-    
+@media (min-width: 576px) {
+    .miHeader {
+        background-color: aqua;
+    }
+
+    .miBody2{
+        background-color: red;
+    }
+    .miBody3{
+        background-color: greenyellow;
+    }
+}
+
+@media (min-width: 768px) {
+    .miHeader {
+        background-color: greenyellow;
+    }
+    .miBody3{
+        background-color: red;
+    }
 }
