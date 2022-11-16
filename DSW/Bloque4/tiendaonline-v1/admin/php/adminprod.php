@@ -52,7 +52,7 @@
         <option value="0">No</option>
       </select>
       <br>
-      Imagen: <input type="file" name="imagen[]"><br>
+      Imagen: <input type="file" name="imagen"><br>
       <input type="submit" name="enviar" value="Enviar">
       <input type="reset" name="borrar" value="Borrar">
     </form>

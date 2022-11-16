@@ -8,19 +8,19 @@ try {
     $sql->execute();
 
     //Imagen
-    $suma = count($_FILES['imagen']['name']);
+    $name = limpiar($_POST['nombre']);
 
-    for ($i = 0; $i < $suma; $i++) {
-        $temporal = limpiar($_FILES['imagen']['tmp_name'][$i]);
-        $namePhoto = limpiar($_FILES['imagen']['name'][$i]);
-        $destiny = "../../photo/$namePhoto";
+    $temporal = $_FILES['imagen']['tmp_name'];
+    $namePhoto = $_FILES['imagen']['name'];
+    $destiny = "../../photo/$namePhoto";
 
-        move_uploaded_file($temporal, $destiny);
-
-        $conn->exec("INSERT INTO imagenesproductos VALUES (NULL, (SELECT id FROM productos order by id DESC LIMIT 1), $namePhoto)");
+    if (move_uploaded_file($temporal, $destiny)) {
+        echo "imagen movida";
     }
 
-    header("location: adminproductos.php");
+    $conn->exec("INSERT INTO imagenesproductos VALUES (NULL, (SELECT id FROM productos order by id DESC LIMIT 1), '$namePhoto', '$name', NULL)");
+
+    //header("location: adminprod.php");
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
