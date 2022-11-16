@@ -3,6 +3,8 @@ $serverName = "localhost";
 $user = "admin";
 $password = "admin";
 $dbname = "stonestore";
+//u674705277_diegobrito1
+//Escritorio13
 
 try {
     //Entramos como admin para crear las tablas e insertar datos

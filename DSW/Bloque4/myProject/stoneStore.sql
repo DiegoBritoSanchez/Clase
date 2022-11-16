@@ -1,5 +1,5 @@
 /*Product*/
-use stonestore;
+use u674705277_diegobrito1;
 CREATE Table
     if not exists product (
         id int auto_increment,
