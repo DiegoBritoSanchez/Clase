@@ -1,3 +1,7 @@
+body{
+    background-color: antiquewhite;
+}
+
 .header {
     background-color: darkblue;
     height: 100px;
@@ -19,4 +23,7 @@
     nav .navbar-nav ul li a {
         color: black !important;
     }
+}
+.mySlider{
+    background-color: antiquewhite;
 }
