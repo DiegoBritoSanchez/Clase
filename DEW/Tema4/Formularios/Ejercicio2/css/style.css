@@ -1,0 +1,23 @@
+body{
+    background-color: antiquewhite;
+}
+.game{
+    background-color: var(--bs-indigo);
+    height: 225px;
+    width: 27.5%;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .result{
+        background-color: rgb(221, 154, 154);
+        position: fixed;
+        right: 0px;
+        height: 1000px;
+    }
+}
+.btn {
+    background-color: var(--bs-green);
+    color: white;
+    margin-top: -10%;
+}
