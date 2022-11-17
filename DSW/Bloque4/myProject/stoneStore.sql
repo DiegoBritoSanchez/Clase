@@ -1,11 +1,13 @@
 /*Product*/
-use u674705277_diegobrito1;
+use stonestore;
+/*use u674705277_diegobrito1;*/
 CREATE Table
     if not exists product (
         id int auto_increment,
         name varchar(255),
         description varchar(255),
         price float,
+        stock int,
         PRIMARY KEY (id)
     );
 
