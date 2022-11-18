@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php
+include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\connect.inc');
+include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\header.inc');
 
-<head>
-    <title>Online Stone Store</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/templatemo.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-
-</head>
-
-<body>
-    <?php
-    include('assets/php/connect.inc');
-    include('assets/php/header.inc');
-    ?>
-    <!-- Modal -->
-    <!-- <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+?>
+<!-- Modal -->
+<!-- <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -40,38 +19,38 @@
             </form>
         </div>
     </div> -->
-    <!-- /Modal -->
-    <!-- Start Banner Hero -->
-    <div id="template-mo-zay-hero-carousel" class="carousel slide " data-bs-ride="carousel" style="height: 600px;">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-        </ol>
+<!-- /Modal -->
+<!-- Start Banner Hero -->
+<div id="template-mo-zay-hero-carousel" class="carousel slide " data-bs-ride="carousel" style="height: 600px;">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+    </ol>
 
-        <div class="carousel-inner" style="height: 600px; ">
-            <?php
-            $sql = "SELECT p.id pid, i.id iid, p.name, p.description, p.price, i.image from product p inner join images i on p.id = i.id_prod where stock > 0 group by p.id";
-            $result = $conn->query($sql);
-            $control = 0;
-            while ($register = $result->fetch(PDO::FETCH_ASSOC)) {
+    <div class="carousel-inner" style="height: 600px; ">
+        <?php
+        $sql = "SELECT p.id pid, i.id iid, p.name, p.description, p.price, i.image from product p inner join images i on p.id = i.id_prod where stock > 0 group by p.id";
+        $result = $conn->query($sql);
+        $control = 0;
+        while ($register = $result->fetch(PDO::FETCH_ASSOC)) {
 
-                if ($control == 0) {
-                    echo '<div class="carousel-item active " data-bs-interval="35000">';
-                    echo '<a href="products.php" style="text-decoration: none; color: black;">';
-                    $control++;
-                } else if ($control == 1) {
-                    echo '<div class="carousel-item " data-bs-interval="35000" style="top:10%;">';
-                    echo '<a href="products.php" style="text-decoration: none; color: black;">';
-                    $control++;
-                } else {
-                    echo '<div class="carousel-item " data-bs-interval="35000" style="top:20%;">';
-                    echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
-                }
-                echo '<div class="container">
+            if ($control == 0) {
+                echo '<div class="carousel-item active " data-bs-interval="35000">';
+                echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
+                $control++;
+            } else if ($control == 1) {
+                echo '<div class="carousel-item " data-bs-interval="35000" style="top:10%;">';
+                echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
+                $control++;
+            } else {
+                echo '<div class="carousel-item " data-bs-interval="35000" style="top:20%;">';
+                echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
+            }
+            echo '<div class="container">
                     <div class="row ">
                         <div class="mx-auto py-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/' . $register['image'] . '" alt="">
+                            <img class="img-fluid" src="./photo/' . $register['image'] . '" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -84,17 +63,17 @@
                 </div>
             </div>
             </a>';
-            }
-            ?>
-            <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-                <i class="fas fa-chevron-left"></i>
-            </a>
-            <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-        <?php
-        include('assets/php/footer.php');
+        }
         ?>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <?php
+    include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\footer.inc');
+    ?>
 
-</html>
+    </html>
