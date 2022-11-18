@@ -1,9 +1,9 @@
-body{
-    background-color: antiquewhite;
+body {
+    background-color: bisque;
 }
 
 .header {
-    background-color: darkblue;
+    background-color: saddlebrown;
     height: 100px;
 }
 
@@ -15,15 +15,27 @@ body{
     .nav-link {
         color: white;
     }
-    
+
     nav .navbar-nav li a {
         color: white !important;
     }
-    
+
     nav .navbar-nav ul li a {
         color: black !important;
     }
 }
-.mySlider{
+
+.mySlider {
     background-color: antiquewhite;
+}
+
+.cardCar {
+    background-color: rgba(80, 80, 80, 0.5);
+    color: aliceblue;
+}
+.myButton {
+    background-color: darkblue;
+}
+.cursorCustom {
+    cursor: pointer;
 }

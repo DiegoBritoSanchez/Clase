@@ -1,6 +1,6 @@
 /*Product*/
-use stonestore;
-/*use u674705277_diegobrito1;*/
+/* use stonestore; */
+use u674705277_diegobrito1;
 CREATE Table
     if not exists product (
         id int auto_increment,
@@ -48,6 +48,11 @@ CREATE TABLE
 /*admin*/
 INSERT INTO `users` (`id`, `name`, `psswd`, `email`) VALUES (NULL, 'admin', 'admin', 'admin@admin.com');
 /*producto*/
-INSERT INTO product values (null, 'piedra1', 'piedra1Descripcion', 19.99);
+INSERT INTO product values (null, 'stone1', 'stone1Description', 19.99, 5);
+INSERT INTO product values (null, 'stone2', 'stone2Description', 35.99, 7);
+INSERT INTO product values (null, 'stone3', 'stone3Description', 9.99, 1);
 /*imagenes*/
-INSERT INTO images values (null, 1, 'piedra1.png', null);
+INSERT INTO images values (null, 1, 'stone1.png', null);
+INSERT INTO images values (null, 1, 'stone1-2.png', null);
+INSERT INTO images values (null, 2, 'stone2.png', null);
+INSERT INTO images values (null, 3, 'stone3.png', null);

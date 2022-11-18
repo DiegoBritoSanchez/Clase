@@ -27,9 +27,9 @@
 
 // * Admin credentials
 $serverName = "localhost";
-$userAdmin = 'admin';
-$passwordAdmin = 'admin';
-$dbname = 'stonestore';
+$userAdmin = 'u674705277_diegobrito1';
+$passwordAdmin = 'Escritorio13';
+$dbname = 'u674705277_diegobrito1';
 //u674705277_diegobrito1
 
 try {

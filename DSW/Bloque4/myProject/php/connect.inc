@@ -1,8 +1,8 @@
 <?php
 $serverName = "localhost";
-$user = "admin";
-$password = "admin";
-$dbname = "stonestore";
+$user = "u674705277_diegobrito1";
+$password = "Escritorio13";
+$dbname = "u674705277_diegobrito1";
 //u674705277_diegobrito1
 //Escritorio13
 
