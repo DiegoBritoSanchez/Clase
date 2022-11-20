@@ -8,7 +8,16 @@
 </head>
 
 <body>
-  <?php include '../../php/connect.inc' ?>
+<?php
+$url= $_SERVER["REQUEST_URI"];
+$url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
+
+// include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\connect.inc');
+include($url . '../php/connect.inc');
+// include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\header.inc');
+include($url . 'php/headerAdmin.inc');
+echo "<h1>Header WIP...</h1>";
+?>
   <h2>Productos</h2>
   <?php
   echo "<table style='border:1px solid #333'
@@ -19,15 +28,15 @@
           <th>Existencias</th>
           <th>Activado</th>
         </tr>";
-  $sql = "SELECT * from productos";
+  $sql = "SELECT * from product";
   $result = $conn->query($sql);
   while ($register = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>
               <td>" . $register['id'] . "</td>
-              <td>" . $register['nombre'] . "</td>
-              <td>" . $register['precio'] . "</td>
-              <td>" . $register['existencias'] . "</td>
-              <td>" . $register['activado'] . "</td>
+              <td>" . $register['name'] . "</td>
+              <td>" . $register['price'] . "</td>
+              <td>" . $register['stock'] . "</td>
+              <td>" . $register['active'] . "</td>
             </tr>";
   }
   echo "</table>";
@@ -42,8 +51,6 @@
       <input type="text" name="nombre" autocomplete="off">
       <label for="peecio">Precio</label>
       <input type="number" name="precio" autocomplete="off">
-      <label for="peso">Peso</label>
-      <input type="text" name="peso" autocomplete="off">
       <label for="existencias">Existencias</label>
       <input type="number" name="existencias" autocomplete="off">
       <label for="peso">Activado</label>
@@ -63,10 +70,10 @@
       Producto a eliminar: <select class="" name="select">
         <option value="" disabled selected>Elige un producto...</option> -->
         <?php
-        $sql = "SELECT id, nombre from productos;";
+        $sql = "SELECT id, name from product;";
         $result = $conn->query($sql);
         while ($borrar = $result->fetch(PDO::FETCH_ASSOC)) {
-          echo "<option value=" . $borrar['id'] . ">" . $borrar['nombre'] . "</option>";
+          echo "<option value=" . $borrar['id'] . ">" . $borrar['name'] . "</option>";
         }
         ?>
       </select>

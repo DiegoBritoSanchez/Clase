@@ -56,3 +56,5 @@ INSERT INTO images values (null, 1, 'stone1.png', null);
 INSERT INTO images values (null, 1, 'stone1-2.png', null);
 INSERT INTO images values (null, 2, 'stone2.png', null);
 INSERT INTO images values (null, 3, 'stone3.png', null);
+/* active */
+ALTER TABLE `product` ADD `active` INT NOT NULL DEFAULT '1' AFTER `stock`;
