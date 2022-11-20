@@ -2,22 +2,25 @@
 <html lang="es">
 
 <head>
+    <?php $url= $_SERVER["REQUEST_URI"];
+    $url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
+    ?>
     <title>Online Stone Store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $url ?>assets/img/favicon.ico">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico"> -->
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/templatemo.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="<?php echo $url ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $url ?>assets/css/templatemo.css">
+    <link rel="stylesheet" href="<?php echo $url ?>assets/css/custom.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-
+    <link rel="stylesheet" href="<?php echo $url?>assets/css/fontawesome.min.css">
 </head>
 
 <body>
@@ -33,7 +36,7 @@
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:000-000-000">666-999-555</a>
                 </div>
                 <div>
-                    <a class="text-light" href="./" rel="sponsored"><i
+                    <a class="text-light" href="<?php echo $url ?>" rel="sponsored"><i
                             class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.instagram.com/" target="_blank"><i
                             class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
@@ -50,7 +53,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="./">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="<?php echo $url ?>">
                 Online Stone Store
             </a>
 
@@ -65,10 +68,10 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="./">Home</a>
+                            <a class="nav-link" href="<?php echo $url ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.php">Products</a>
+                            <a class="nav-link" href="<?php echo $url ?>php/products.php">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.html">Shop</a>
@@ -91,12 +94,12 @@
                         data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="index.php">
+                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo $url ?>index.php">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo $url ?>php/login.php">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
