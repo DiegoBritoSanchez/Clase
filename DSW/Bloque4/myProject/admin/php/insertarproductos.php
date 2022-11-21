@@ -1,5 +1,5 @@
 <?php
-$url= $_SERVER["REQUEST_URI"];
+$url = $_SERVER["REQUEST_URI"];
 $url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
 
 // include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\connect.inc');
@@ -16,14 +16,19 @@ try {
     $sql->execute();
 
     //Imagen
-    $name = limpiar($_POST['nombre']);
+    $count = count($_FILES['imagen']['tmp_name']);
+    for ($i = 0; $i < $count; $i++) {
+        if ($_FILES['imagen']['type'][$i] == 'image/png' || $_FILES['imagen']['type'][$i] == 'image/jpeg' || $_FILES['imagen']['type'][$i] == 'image/gif' || $_FILES['imagen']['type'][$i] == 'image/jpg') {
+            $temporal = $_FILES['imagen']['tmp_name'][$i];
+            $namePhoto = $_FILES['imagen']['name'][$i];
+            $destiny = "../../photo/$namePhoto";
+            move_uploaded_file($temporal, $destiny);
 
-    $temporal = $_FILES['imagen']['tmp_name'];
-    $namePhoto = $_FILES['imagen']['name'];
-    $destiny = "../../photo/$namePhoto";
-    move_uploaded_file($temporal, $destiny);
+            $name = limpiar($_POST['nombre']);
 
-    $conn->exec("INSERT INTO images VALUES (NULL, (SELECT id FROM product order by id DESC LIMIT 1), '$namePhoto', NULL)");
+            $conn->exec("INSERT INTO images VALUES (NULL, (SELECT id FROM product order by id DESC LIMIT 1), '$namePhoto', NULL)");
+        }
+    }
 
     header("location: adminprod.php");
 } catch (PDOException $e) {

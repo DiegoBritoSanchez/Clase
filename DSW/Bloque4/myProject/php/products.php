@@ -21,7 +21,7 @@ include($url . 'php/header.inc');
             $lamp = $result2->fetch(PDO::FETCH_ASSOC);?>
             <div class='w-full p-6 flex flex-row place-content-center'>
             <?php while ($register = $result->fetch(PDO::FETCH_ASSOC)) { ?>
-                <img src="<?php echo $url ?>photo/<?php echo $register['image'] ?>" class='img-fluid m-2 pb-5' style='width:250px;'>";
+                <img src="<?php echo $url ?>photo/<?php echo $register['image'] ?>" class='img-fluid m-2 pb-5' style='width:250px;'>
             <?php } ?>
             </div>
             <div class='w-full p-6 flex flex-row place-content-center'>

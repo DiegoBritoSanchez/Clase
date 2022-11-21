@@ -45,8 +45,11 @@ CREATE TABLE
         FOREIGN KEY (id_prod) REFERENCES product (id),
         FOREIGN KEY (id_user) REFERENCES users (id)
     );
+/* moddifiers*/
+ALTER TABLE `product` ADD `active` INT NOT NULL DEFAULT '1' AFTER `stock`;
+ALTER TABLE `users` ADD `type` INT NOT NULL DEFAULT '1' AFTER `email`;
 /*admin*/
-INSERT INTO `users` (`id`, `name`, `psswd`, `email`) VALUES (NULL, 'admin', 'admin', 'admin@admin.com');
+INSERT INTO `users` (`id`, `name`, `psswd`, `email`, `type`) VALUES (NULL, 'admin', 'admin', 'admin@admin.com', 0);
 /*producto*/
 INSERT INTO product values (null, 'stone1', 'stone1Description', 19.99, 5);
 INSERT INTO product values (null, 'stone2', 'stone2Description', 35.99, 7);
@@ -56,5 +59,3 @@ INSERT INTO images values (null, 1, 'stone1.png', null);
 INSERT INTO images values (null, 1, 'stone1-2.png', null);
 INSERT INTO images values (null, 2, 'stone2.png', null);
 INSERT INTO images values (null, 3, 'stone3.png', null);
-/* active */
-ALTER TABLE `product` ADD `active` INT NOT NULL DEFAULT '1' AFTER `stock`;

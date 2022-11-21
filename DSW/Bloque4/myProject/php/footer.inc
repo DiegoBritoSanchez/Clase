@@ -71,7 +71,8 @@
 </footer>
 <!-- End Footer -->
 
-<!-- Start Script -->
+<!-- Start Script 
+$url == "/tienda/" ? $url = "./" : $url = "../";-->
 <?php $url= $_SERVER["REQUEST_URI"];
     $url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
 ?>

@@ -1,6 +1,7 @@
 <?php
 $url= $_SERVER["REQUEST_URI"];
-$url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
+$url == "/tienda/" ? $url = "./" : $url = "../";
+// $url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
 
 // include($_SERVER["DOCUMENT_ROOT"] . '\Clase\DSW\Bloque4\myProject\php\connect.inc');
 include($url . 'php/connect.inc');
@@ -8,7 +9,7 @@ include($url . 'php/connect.inc');
 include($url . 'php/header.inc');
 
 ?>
-<div class="container-fluid py-5 loging" style=" background-color: rgba(0, 255, 136, 0.486); border-radius: 40px; margin-top:5%;">
+<div class="container-fluid py-5 loging" style=" background-color: rgba(0, 255, 136, 0.486); border-radius: 40px; margin-top:5%; width: 50%;">
 <form >
   <!-- Email input -->
   <div class="form-outline mb-4">

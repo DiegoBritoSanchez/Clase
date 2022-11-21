@@ -39,15 +39,15 @@ include('php/header.inc');
 
             if ($control == 0) {
                 echo '<div class="carousel-item active " data-bs-interval="35000">';
-                echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
+                echo '<a href="php/products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
                 $control++;
             } else if ($control == 1) {
                 echo '<div class="carousel-item " data-bs-interval="35000" style="top:10%;">';
-                echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
+                echo '<a href="php/products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
                 $control++;
             } else {
                 echo '<div class="carousel-item " data-bs-interval="35000" style="top:20%;">';
-                echo '<a href="products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
+                echo '<a href="php/products.php?id=' . $register['pid'] . '" style="text-decoration: none; color: black;">';
             }
             echo '<div class="container">
                     <div class="row ">
