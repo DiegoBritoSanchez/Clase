@@ -2,7 +2,7 @@ body{
     background-color: antiquewhite;
 }
 .game{
-    background-color: var(--bs-indigo);
+    background-color: #6610f2;
     height: 225px;
     width: 27.5%;
     cursor: pointer;
@@ -21,3 +21,15 @@ body{
     color: white;
     margin-top: -10%;
 }
+
+.rotate-center {
+	animation: rotate-center 1.25s ease-in-out both;
+}
+@keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
