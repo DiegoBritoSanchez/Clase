@@ -68,11 +68,7 @@ function comprobar(id) {
                     document.getElementById("fail").innerHTML = "Fallos: " + error;
                     document.getElementById(divAux1).style.backgroundColor = "#6610f2";
                     document.getElementById(divAux2).style.backgroundColor = "#6610f2";
-                    var flips = document.getElementsByClassName("rotate-center");
-
-                    for (let index = 0; index < flips.length; index++) {
-                        flips[index].classList.remove("rotate-center");
-                    }
+                    // document.querySelectorAll()
 
                 }
             }
