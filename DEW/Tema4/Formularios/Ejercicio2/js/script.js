@@ -3,8 +3,6 @@ var card1;
 var card2;
 var control;
 var counter = 0;
-var divAux1;
-var divAux2;
 var success = 0;
 var error = 0;
 // * Funciones
@@ -25,7 +23,9 @@ function setValues() {
 
 function comprobar(id) {
     if (counter < 2) {
+
         var div = "div" + id;
+
         function setColors(value) {
             var divValue = value - 1;
             var colors = Array("red", "green", "black", "brown", "orange", "darkkhaki");
@@ -37,12 +37,11 @@ function comprobar(id) {
             card1 = document.getElementById(div).getAttribute("value");
             divValue = card1;
             control = true;
-            divAux1 = "div" + id;
+
         } else {
             card2 = document.getElementById(div).getAttribute("value");
             divValue = card2;
-            divAux2 = "div" + id;
-            control = true;
+
         }
         counter++;
         if (control) {
@@ -51,30 +50,50 @@ function comprobar(id) {
         }
 
         setTimeout(test, 2500);
-        console.log(card1);
-        console.log(card2);
+
         function test() {
             if (typeof card2 !== 'undefined') {
 
                 if (card1 == card2) {
-                    counter = 0;
                     success++;
+
                     document.getElementById("success").innerHTML = "Aciertos: " + success;
+                    var rst = true;
+                    resetCounts(rst);
                 } else {
-                    counter = 0;
-                    card1 = undefined;
-                    card2 = undefined;
+
                     error++;
                     document.getElementById("fail").innerHTML = "Fallos: " + error;
-                    document.getElementById(divAux1).style.backgroundColor = "#6610f2";
-                    document.getElementById(divAux2).style.backgroundColor = "#6610f2";
-                    // document.querySelectorAll()
-
+                    var rst = false;
+                    resetCounts(rst);
+                    resetClass();
                 }
+
             }
         }
 
+        function resetClass() {
+            var eraseClass = document.querySelectorAll("div.rotate-center");
+            eraseClass.forEach(element => {
+                console.log(element.value);
+                element.style.backgroundColor = "#6610f2";
+                element.classList.remove("rotate-center");
+            });
+        }
 
+        function resetCounts(rst) {
+            card1 = undefined;
+            card2 = undefined;
+            counter = 0;
+            if (rst) {
+                var eraseValue = document.querySelectorAll("div.rotate-center");
+                eraseValue.forEach(elements => {
+                    elements.removeAttribute("onclick");
+                    elements.classList.remove("rotate-center");
+                })
+            }
+            ;
+        }
     }
 
 
