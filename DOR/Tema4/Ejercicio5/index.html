@@ -1,111 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio5</title>
-  <!-- <link rel="stylesheet" href="css/master.css"> -->
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Central HTML Template</title>
+    <!--
+
+    Template 2103 Central
+
+	http://www.tooplate.com/view/2103-central
+
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css">
+    <!-- tooplate style -->
+
+    <script>
+        var renderPage = true;
+
+        // if (navigator.userAgent.indexOf('MSIE') !== -1
+        //     || navigator.appVersion.indexOf('Trident/') > 0) {
+        //     /* Microsoft Internet Explorer detected in. */
+        //     alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+        //     renderPage = false;
+        // }
+    </script>
+
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg header fixed-top">
-    <div class="container-fluid">
-      <a href="./" class="px-3 pb-3 navbar-brand"><img src="img/kiwi.png" alt="" style="width: 64px;" class="py-3"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse offset-6" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./"><i class="fa fa-home"></i> Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-star"></i> Productos destacados</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa fa-arrow-down"></i> Categorías
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Montaña</a></li>
-              <li><a class="dropdown-item" href="#">Playa</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Volcán</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-user"></i> Perfil</a>
-          </li>
-        </ul>
-        <form class="d-flex input-group w-auto">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-            aria-describedby="search-addon" id="searchInput"/>
-          <span class="input-group-text cursorCustom" id="search-addon">
-            <i class="fa fa-search"></i>
-          </span>
-        </form>
-      </div>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
     </div>
-  </nav>
+    <div class="container">
+        <section class="tm-section-head" id="top">
+            <header id="header" class="text-center tm-text-gray">
+                <a href="./" style="text-decoration: none; color: gray;">
+                    <h1>CENTRAL</h1>
+                    <p>NEW TEMPLATE FOR YOU</p>
+                </a>
 
-  <div class="row pagina pt-5">
-    <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active "
-          aria-current="true" aria-label="Slide 1" style="background-color: var($indigo);"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="img/kiwi.png" class="d-block " alt="..." style="width: 500px; margin: auto;">
-          <div class="carousel-caption d-none d-md-block text-light cardCar rounded-pill">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="img/kiwi.png" class="d-block " alt="..." style="width: 500px; margin: auto;">
-          <div class="carousel-caption d-none d-md-block text-light cardCar rounded-pill">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="img/kiwi.png" class="d-block " alt="..." style="width: 500px; margin: auto;">
-          <div class="carousel-caption d-none d-md-block text-light cardCar rounded-pill">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon rounded-pill myButton" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon rounded-pill myButton" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+            </header>
+
+            <nav class="navbar narbar-light">
+                <a class="navbar-brand tm-text-gray" href="#">
+                    Menu
+                </a>
+                <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse"
+                    data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-navicon tm-fa-toggler-icon"></i>
+                    </span>
+                </button>
+                <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link tm-text-gray" href="#top">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link tm-text-gray" href="pages/products.html">Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link tm-text-gray" href="pages/login.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="navbar navbar-default navbar-fixed-top">
+                <a href="/index.html" class="navbar-brand"></a>
+                <botton class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mydropdown">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </botton>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="mydropdown">
+
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="pages/products.html">info</a>
+                    </li>
+                    <li>
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="row" id="tm-section-1">
+            <div class="col-lg-12 tm-slider-col">
+                <div class="tm-img-slider">
+                    <div class="tm-img-slider-item" href="img/gallery-img-01.jpg">
+                        <p class="tm-slider-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <img src="img/gallery-img-01.jpg" alt="Image" class="tm-slider-img">
+                    </div>
+                    <div class="tm-img-slider-item" href="img/gallery-img-02.jpg">
+                        <p class="tm-slider-caption">Curabitur justo nisl, elementum a mollis sed.</p>
+                        <img src="img/gallery-img-02.jpg" alt="Image" class="tm-slider-img">
+                    </div>
+                    <div class="tm-img-slider-item" href="img/gallery-img-03.jpg">
+                        <p class="tm-slider-caption">Suspendisse sodales elit non metus dictum blandit.</p>
+                        <img src="img/gallery-img-03.jpg" alt="Image" class="tm-slider-img">
+                    </div>
+                    <div class="tm-img-slider-item" href="img/gallery-img-04.jpg">
+                        <p class="tm-slider-caption">Aliquam sed molestie tortor, mollis auctor neque.</p>
+                        <img src="img/gallery-img-04.jpg" alt="Image" class="tm-slider-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 
+        <section class="tm-section-2 tm-section-mb" id="tm-section-2">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5">
+                    <header class="text-center">
+                        <i class="fa fa-4x fa-power-off pl-5 pb-5 pr-5 pt-2"></i>
+                    </header>
+
+                    <h2>Lorem ipsum dolor</h2>
+                    <p>Central Template is provided by <a href="https://www.facebook.com/tooplate" target="_blank">Tooplate</a>. Vestibulum sit amet tortor velit.
+                        Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat
+                malesuada. </p>
+
+                    <a href="#tm-section-3" class="btn tm-btn-pad-2 float-right">Learn More</a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-md-5 mb-5 pr-md-5">
+                    <header class="text-center">
+                        <i class="fa fa-4x fa-bolt pl-5 pb-5 pr-5 pt-2"></i>
+                    </header>
+                    <h2>Lorem ipsum dolor</h2>
+                    <p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit.
+                        Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat
+                        malesuada.
+                    </p>
+
+                    <a href="#tm-section-4" class="btn tm-btn-pad-2 float-right">Learn More</a>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-12">
+                    <h2>Nulla maximus hendrerit</h2>
+                    <p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit.</p>
+                    <p>Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada, iaculis est.</p>
+                    <p>+ Curabitur a massa malesuada, ullamcorper nisi tempus.</p>
+                    <p>+ Maecenas ultricies magna sed suscipit pulvinar.</p>
+                    <p>+ Nulla malesuada elit nec nisi aliquet pretium.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="tm-section-4 tm-section-mb" id="tm-section-4">
+            <div class="row">
+
+            </div>
+        </section>
+
+        <section class="tm-section-5" id="tm-section-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="image fit">
+                        <img src="img/tm-sc4-img-1.jpg" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 pl-lg-0">
+                    <div class="media tm-media">
+                        <img src="img/sc4-img-2.jpg" class="img-responsive tm-media-img">
+                        <div class="media-body tm-box-5">
+                            <h2>Etiam tincidunt ullamcorper</h2>
+                            <p class="mb-0">Maecenas tempor nibh sed rhoncus ullamcorper. Ut porttitor ante non accumsan pretium. Maecenas iaculis arcu sed porta accumsan.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <img src="img/sc4-img-3.jpg" class="img-responsive tm-media-img">
+                        <div class="media-body tm-box-5">
+                            <h2>Sed et finibus tortor</h2>
+                            <p class="mb-0">Suspendisse iaculis leo libero, ut congue augue feugiat eu. Nulla faucibus non odio sed auctor. Vestibulum a tincidunt dolor, eget eleifend lacus.</p>
+                        </div>
+                    </div>
+                    <div class="media tm-media">
+                        <img src="img/sc4-img-4.jpg" class="img-responsive tm-media-img">
+                        <div class="media-body tm-box-5">
+                            <h2>Vestibulum sit amet</h2>
+                            <p class="mb-0"> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- section mas abajo -->
+
+        <footer class="mt-5">
+            <p class="text-center">Copyright © 2018 Your Company Name - Design: Tooplate</p>
+        </footer>
     </div>
-  </div>
-  <div class="row"></div>
+
+    <!-- load JS files -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <!-- https://popper.js.org/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- Slick Carousel -->
+    <script src="js/scriptMain.js"></script>
+
 </body>
-<script src="js/script.js"></script>
+
 </html>
