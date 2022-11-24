@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 1EV</title>
+</head>
+<body>
+    <div>
+        <form name="form" id="form" onsubmit="false" >
+            Fecha: <input type="date" name="date" id="date"><br>
+            Nombre: <input type="text" name="name" id="name"><br>
+            Teléfono: <input type="text" name="tel" id="tel"><br>
+            Correo: <input type="email" name="mail" id="mail"><br>
+            Responsable: <input type="text" name="resp" id="resp"><br>
+            Tipo de incidencia:
+            <select name="typeIncident" id="typeIncident">
+                <option value="hardware">Hardware</option>
+                <option value="software">Software</option>
+                <option value="nuevo">Nuevos Servicios</option>
+                <option value="duda">Resolución de dudas</option>
+            </select><br>
+            Prioridad: <input type="radio" name="prio" id="prioL" value="leve"><label for="prioL">Leve</label>
+            <input type="radio" name="prio" id="prioM" value="medio"><label for="prioM">Media</label>
+            <input type="radio" name="prio" id="prioG" value="grave"><label for="prioG">Grave</label><br>
+            Estado: <input type="text" name="estado" id="estado" disabled placeholder="Tramitado"><br>
+            Obeservaciones: <br><textarea name="observations" id="obs" cols="30" rows="3"></textarea>
+            <br><br><button id="send">Enviar</button>
+        </form>
+        
+    </div>
+    <div>
+        <br><button id="show">Mostrar incidencias</button>
+        <table id="table" border="1">
+        </table>
+    </div>
+    
+    <script src="index.js" type="module"></script>
+</body>
+</html>
