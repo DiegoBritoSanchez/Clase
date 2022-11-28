@@ -23,13 +23,18 @@ body{
 }
 
 .rotate-center {
-	animation: rotate-center 1.25s ease-in-out both;
+	animation: rotate-center 1.5s ease-in-out both;
+	-webkit-animation: rotate-center 1.5s ease-in-out both;
 }
 @keyframes rotate-center {
     0% {
       transform: rotate(0);
     }
     100% {
-      transform: rotate(360deg);
-    }
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+}
   }

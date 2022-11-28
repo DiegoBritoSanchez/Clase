@@ -49,7 +49,7 @@ function comprobar(id) {
             document.getElementById(div).style.backgroundColor = setColors(divValue);
         }
 
-        setTimeout(test, 2500);
+        setTimeout(test, 4000);
 
         function test() {
             if (typeof card2 !== 'undefined') {
