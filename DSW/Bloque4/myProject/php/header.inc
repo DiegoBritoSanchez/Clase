@@ -3,9 +3,10 @@
 
 <head>
     <?php $url= $_SERVER["REQUEST_URI"];
-    $url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
+    $url == "/tienda/" ? $url = "./" : $url = "../";
+    session_start();
     ?>
-    <!--$url == "/tienda/" ? $url = "./" : $url = "../";-->
+    <!--$url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";-->
     <title>Online Stone Store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,7 +96,7 @@
                         data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo $url ?>index.php">
+                    <a class="nav-icon position-relative text-decoration-none" href="<?php echo $url ?>/php/borra.php">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
