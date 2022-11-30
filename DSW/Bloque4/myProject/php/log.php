@@ -6,6 +6,9 @@ $url == "/tienda/" ? $url = "./" : $url = "../";
 include($url . 'php/connect.inc');
 
 include($url . 'php/limpiar.inc');
+
+session_start();
+
 $usu = limpiar($_POST['email']);
 $psswd = limpiar($_POST['psswd']);
 $psswdHashed = hash('sha256', $psswd);
@@ -18,15 +21,19 @@ try {
         ':p' => $psswdHashed
     ]);
 } catch (PDOException $e) {
-    $conn = null;
     die('Fallo en la conexión a la BD: ' . $e->getMessage());
 }
 if ($result->rowCount() == 0) {
     echo "Usuario y/o contraseñas incorrectos...";
-    die();
+    header('location: ../');
 } else {
     $credentials = $result->fetch(PDO::FETCH_ASSOC);
     $_SESSION['user'] = $credentials['name'];
     $_SESSION['type'] = $credentials['type'];
-    header('location: ../');
+    if ($_SESSION['type'] == 0) {
+        header('location: ../admin/');    
+    } else {
+        header('location: ../');
+    }
+    
 }

@@ -74,7 +74,7 @@
 <!-- Start Script 
 $url == "/tienda/" ? $url = "./" : $url = "../";-->
 <?php $url= $_SERVER["REQUEST_URI"];
-    $url == "/Clase/DSW/Bloque4/myProject/" ? $url = "./" : $url = "../";
+    $url == "/tienda/" ? $url = "./" : $url = "../";
 ?>
 <script src="<?php echo $url ?>assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script src="<?php echo $url ?>assets/js/bootstrap.bundle.min.js"></script>
