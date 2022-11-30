@@ -126,7 +126,7 @@ button:focus {
   z-index: 1000;
   margin-bottom: 0;
   padding: 8px 30px;
-  background-color: rgba(206, 212, 218, 0.5);
+  background-color: rgba(206, 212, 218, 0.8);
   color: #111;
 }
 
