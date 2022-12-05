@@ -14,8 +14,7 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-
-$sql = "SELECT * FROM productos;";
+$sql = "SELECT * FROM productos where id=".$_POST['nombre'].";";
 
 $result = $conn->query($sql);
 $array = array();
@@ -25,5 +24,4 @@ while ($register = $result->fetch(PDO::FETCH_ASSOC)) {
 }
 
 echo json_encode($array);
-
 ?>

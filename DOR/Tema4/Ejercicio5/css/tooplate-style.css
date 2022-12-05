@@ -293,11 +293,9 @@ a {
   border-radius: 50%;
   border: 3px solid transparent;
   border-top-color: #3498db;
-
-  -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-
+  animation: spin 2s linear infinite;
   z-index: 1001;
+  -webkit-animation: spin 2s linear infinite;
 }
 
 #loader:before {
@@ -377,12 +375,15 @@ a {
 
 /* Loaded */
 .loaded #loader-wrapper .loader-section.section-left {
-  -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateX(-100%); /* IE 9 */
-  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
-
-  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translateX(-100%);
+  /*Chrome,Opera15+,Safari3.1+*/-ms-transform: translateX(-100%);
+  /*IE9*/transform: translateX(-100%);
+  /*Firefox16+,IE10+,Opera*/-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -ms-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .loaded #loader-wrapper .loader-section.section-right {

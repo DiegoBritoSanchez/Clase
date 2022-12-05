@@ -1,8 +1,5 @@
 var formulario = document.getElementById('formulario');
 var respuesta = document.getElementById('respuesta');
-for (let h = 0; h < 3; h++) {
-
-}
 
 formulario.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -17,6 +14,7 @@ formulario.addEventListener('submit', function (e) {
     })
         .then(res => res.json())
         .then(data => {
+            console.log(data);
             let keys;
             data.forEach(element => {
                 keys = Object.keys(element);
@@ -30,10 +28,3 @@ formulario.addEventListener('submit', function (e) {
             }
         })
 });
-
-function createInputs(data) {
-    for (let i = 0; i < data.length; i++) {
-        const element = array[i];
-        
-    }
-}
