@@ -1,0 +1,16 @@
+/*
+Custom Css
+*/
+body{
+    color: black;
+}
+.loging {
+    margin: auto;
+    width: 90%;
+}
+
+@media (min-width: 768px){
+    .loging {
+        width: 30%;
+    }
+}
