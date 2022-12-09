@@ -28,9 +28,12 @@ function setCarousel() {
 }
 
 $(document).ready(function () {
-    if (renderPage) {
-        $('body').addClass('loaded');
-    }
+    setTimeout(() => {
+        if (renderPage) {
+            $('body').addClass('loaded');
+        }
+    }, 500);
+    
 
     setCarousel();
 
