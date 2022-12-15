@@ -1,0 +1,46 @@
+body {
+    background-color: #c2c073cb;
+    font-family: 'Italianno', cursive;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+.greenItaly {
+    color: #009246;
+}
+
+.whiteItaly {
+    color: #fff;
+}
+
+.redItaly {
+    color: #ce2b37;
+}
+
+.toppings,
+input[type='checkbox'],
+input[type='radio'] {
+    margin-top: 1.5em;
+}
+
+.toppings,
+label {
+    margin-top: 1.25em;
+}
+
+svg {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container-fluid {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
