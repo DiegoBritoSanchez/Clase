@@ -1,0 +1,32 @@
+@function randomColor() {
+    @return rgba(random(255), 0, 0, 1);
+}
+
+$color-title: randomColor();
+
+@function randomColor2() {
+    @return rgba(0, random(255), 0, 1);
+}
+
+$color-subtitle: randomColor2();
+
+@mixin title-font {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+h1 {
+    @include title-font;
+    font-size: 2rem;
+    text-align: center;
+}
+h2 {
+    @include title-font;
+    font-size: 1.5rem;
+    text-align: center;
+}
+h3 {
+    @include title-font;
+    font-size: 1.2rem;
+    text-align: center;
+}
