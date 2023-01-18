@@ -1,21 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
 h1 {
   font-weight: 700;
-  font-size: 1rem;
   font-size: 2rem;
   text-align: center;
 }
 
 h2 {
   font-weight: 700;
-  font-size: 1rem;
   font-size: 1.5rem;
   text-align: center;
 }
 
 h3 {
   font-weight: 700;
-  font-size: 1rem;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -48,14 +45,14 @@ header img {
   left: 0;
 }
 header h1 {
-  color: rgb(100, 0, 0);
+  color: rgb(245, 0, 0);
   font-weight: 700;
   text-align: center;
   margin: 0;
   font-size: 2rem;
 }
 header h2 {
-  color: rgb(0, 196, 0);
+  color: rgb(0, 106, 0);
   font-weight: 700;
   text-align: center;
   margin: 0;
@@ -104,6 +101,37 @@ nav ul li a:hover {
 
 section {
   min-height: 20em;
+  display: flex;
+  flex-wrap: wrap;
+}
+section article {
+  flex: 1;
+  min-width: calc(33.33% - 20px);
+  margin: 0.5em 0.25em 0 0.25em;
+  text-align: center;
+  position: relative;
+  background-color: rgba(35, 224, 141, 0.5);
+}
+section article a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+section article img {
+  width: 50px;
+  position: absolute;
+  left: 0;
+}
+section article h3 {
+  padding-right: 1em;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  position: absolute;
+  right: 0;
+}
+section article p {
+  font-size: 0.8rem;
+  margin-top: 35px;
 }
 
 footer {
@@ -124,42 +152,10 @@ footer div {
 footer div img {
   width: 3em;
   padding: 0 10px;
-  align-items: center;
-  text-align: center;
 }
 footer p {
   font-size: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-nav {
-  background-color: #d5d5d5;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-}
-nav Copy code ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav Copy code ul Copy code li {
-  padding: 0 10px;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  font-weight: 400;
-}
-nav Copy code ul a {
-  color: black;
-  text-decoration: none;
-}
-nav Copy code ul a:hover {
-  color: red;
-  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */

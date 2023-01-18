@@ -10,9 +10,14 @@ $color-title: randomColor();
 
 $color-subtitle: randomColor2();
 
+@function randomColorTarget() {
+    @return rgba(random(255), random(255), random(255), 0.5);
+}
+
+$color-card: randomColorTarget();
+
 @mixin title-font {
     font-weight: 700;
-    font-size: 1rem;
 }
 
 h1 {
@@ -20,11 +25,13 @@ h1 {
     font-size: 2rem;
     text-align: center;
 }
+
 h2 {
     @include title-font;
     font-size: 1.5rem;
     text-align: center;
 }
+
 h3 {
     @include title-font;
     font-size: 1.2rem;
