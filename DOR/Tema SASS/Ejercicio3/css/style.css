@@ -45,14 +45,14 @@ header img {
   left: 0;
 }
 header h1 {
-  color: rgb(245, 0, 0);
+  color: rgb(240, 0, 0);
   font-weight: 700;
   text-align: center;
   margin: 0;
   font-size: 2rem;
 }
 header h2 {
-  color: rgb(0, 106, 0);
+  color: rgb(0, 107, 0);
   font-weight: 700;
   text-align: center;
   margin: 0;
@@ -75,6 +75,11 @@ nav {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
 }
 nav ul {
   list-style: none;
@@ -100,7 +105,7 @@ nav ul li a:hover {
 }
 
 section {
-  min-height: 20em;
+  min-height: 25em;
   display: flex;
   flex-wrap: wrap;
 }
@@ -110,7 +115,6 @@ section article {
   margin: 0.5em 0.25em 0 0.25em;
   text-align: center;
   position: relative;
-  background-color: rgba(35, 224, 141, 0.5);
 }
 section article a {
   display: block;
@@ -118,20 +122,95 @@ section article a {
   color: inherit;
 }
 section article img {
-  width: 50px;
+  width: 25%;
   position: absolute;
   left: 0;
+}
+section article h3,
+section article p {
+  width: 75%;
+  position: absolute;
+  right: 0;
 }
 section article h3 {
   padding-right: 1em;
   font-size: 1.2rem;
   margin-top: 10px;
-  position: absolute;
-  right: 0;
 }
 section article p {
+  padding: 1em 0.5em;
   font-size: 0.8rem;
   margin-top: 35px;
+}
+@media (max-width: 992px) {
+  section article {
+    min-width: calc(50% - 20px);
+    min-height: 10em;
+  }
+}
+@media (max-width: 768px) {
+  section article {
+    flex: 0 0 100%;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 11em;
+  }
+  section article img {
+    width: 10%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  section article h3 {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+  section article p {
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+}
+section .article-1 {
+  background-color: rgba(145, 163, 111, 0.5);
+}
+section .article-2 {
+  background-color: rgba(73, 150, 39, 0.5);
+}
+section .article-3 {
+  background-color: rgba(240, 13, 250, 0.5);
+}
+section .article-4 {
+  background-color: rgba(67, 79, 183, 0.5);
+}
+section .article-5 {
+  background-color: rgba(227, 132, 132, 0.5);
+}
+section .article-6 {
+  background-color: rgba(134, 241, 146, 0.5);
+}
+section .article-7 {
+  background-color: rgba(161, 163, 245, 0.5);
 }
 
 footer {

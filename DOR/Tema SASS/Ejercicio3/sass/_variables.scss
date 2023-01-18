@@ -14,8 +14,6 @@ $color-subtitle: randomColor2();
     @return rgba(random(255), random(255), random(255), 0.5);
 }
 
-$color-card: randomColorTarget();
-
 @mixin title-font {
     font-weight: 700;
 }
