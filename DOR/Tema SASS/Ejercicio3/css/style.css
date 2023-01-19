@@ -45,14 +45,14 @@ header img {
   left: 0;
 }
 header h1 {
-  color: rgb(240, 0, 0);
+  color: rgb(149, 0, 0);
   font-weight: 700;
   text-align: center;
   margin: 0;
   font-size: 2rem;
 }
 header h2 {
-  color: rgb(0, 107, 0);
+  color: rgb(0, 105, 0);
   font-weight: 700;
   text-align: center;
   margin: 0;
@@ -192,25 +192,25 @@ section article p {
   }
 }
 section .article-1 {
-  background-color: rgba(145, 163, 111, 0.5);
+  background-color: rgba(191, 39, 3, 0.5);
 }
 section .article-2 {
-  background-color: rgba(73, 150, 39, 0.5);
+  background-color: rgba(53, 121, 82, 0.5);
 }
 section .article-3 {
-  background-color: rgba(240, 13, 250, 0.5);
+  background-color: rgba(46, 68, 70, 0.5);
 }
 section .article-4 {
-  background-color: rgba(67, 79, 183, 0.5);
+  background-color: rgba(61, 169, 154, 0.5);
 }
 section .article-5 {
-  background-color: rgba(227, 132, 132, 0.5);
+  background-color: rgba(133, 224, 93, 0.5);
 }
 section .article-6 {
-  background-color: rgba(134, 241, 146, 0.5);
+  background-color: rgba(160, 249, 105, 0.5);
 }
 section .article-7 {
-  background-color: rgba(161, 163, 245, 0.5);
+  background-color: rgba(101, 100, 20, 0.5);
 }
 
 footer {

@@ -1,0 +1,38 @@
+.fuente-cuerpo {
+    color: $color-principal-1;
+    font-family: $fuente-cuerpo;
+}
+
+.fuente-titulos {
+    color: $color-principal-2;
+    font-family: $fuente-titulos;
+}
+
+.color-principal-1 {
+    color: $color-principal-1;
+}
+
+.color-principal-2 {
+    color: $color-principal-2;
+}
+
+.color-principal-3 {
+    color: $color-principal-3;
+}
+
+.color-principal-4 {
+    color: $color-principal-4;
+}
+
+.color-claro {
+    color: $color-claro;
+}
+
+// Aplicación de variables de nombre de fuente a los elementos
+.nombre-fuente {
+    content: $fuente-cuerpo;
+}
+
+.nombre-fuente-titulos {
+    content: $fuente-titulos;
+}
