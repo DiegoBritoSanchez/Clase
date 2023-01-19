@@ -1,1 +1,98 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header, div {
+  padding-bottom: 2em;
+}
+
+.fuente-cuerpo {
+  color: #000000;
+  font-family: "Arial", sans-serif;
+}
+
+.fuente-titulos {
+  color: #ff0000;
+  font-family: "Helvetica", serif;
+}
+
+.color-principal-1 {
+  color: #000000;
+}
+
+.color-principal-2 {
+  color: #ff0000;
+}
+
+.color-principal-3 {
+  color: #00ff00;
+}
+
+.color-principal-4 {
+  color: #0000ff;
+}
+
+.color-claro {
+  color: #cccccc;
+}
+
+.nombre-fuente {
+  content: "Arial", sans-serif;
+}
+
+.fuente-titulos > h3 {
+  color: black;
+  font-weight: 800;
+}
+
+.nombre-fuente-titulos {
+  content: "Helvetica", serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+header > h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+div > h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+
+span {
+  font-weight: bold;
+  color: black !important;
+}
+
+.titulos > label, h1, h2, h3, h4, h5, h6 {
+  display: inline-block;
+}
+
+label {
+  padding-right: 3em;
+  font-size: 1.5em;
+  color: #cccccc;
+}/*# sourceMappingURL=style.css.map */

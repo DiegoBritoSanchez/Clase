@@ -1,7 +1,19 @@
+@import 'variables';
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header, div{
+    padding-bottom: 2em;
+}
+
 .fuente-cuerpo {
     color: $color-principal-1;
     font-family: $fuente-cuerpo;
 }
+
 
 .fuente-titulos {
     color: $color-principal-2;
@@ -28,11 +40,63 @@
     color: $color-claro;
 }
 
-// Aplicación de variables de nombre de fuente a los elementos
+
 .nombre-fuente {
     content: $fuente-cuerpo;
 }
 
+.fuente-titulos > h3{
+    color: black;
+    font-weight: 800;
+}
+
 .nombre-fuente-titulos {
     content: $fuente-titulos;
+}
+
+
+h1 {
+    font-size: 2.5em;
+}
+
+header>h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 4em;
+}
+
+div>h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.8em;
+}
+
+span {
+    font-weight: bold;
+    color: black !important;
+}
+
+.titulos > label, h1, h2, h3, h4, h5, h6 {
+    display: inline-block;
+  }
+  label{
+    padding-right: 3em;
+    font-size: 1.5em;
+    color: $color-claro;
 }
