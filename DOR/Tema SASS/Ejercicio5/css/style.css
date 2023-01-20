@@ -1,0 +1,242 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid p {
+  padding-left: 1em;
+}
+.grid div {
+  width: 27.5em;
+}
+
+.color-principal-1 {
+  margin: auto;
+}
+.color-principal-1 .muestra {
+  background-color: rgb(220, 20, 60);
+  min-height: 5em;
+}
+.color-principal-1 .nombre::before {
+  content: " Crimson";
+}
+.color-principal-1 .hex::before {
+  content: " #DC143C";
+}
+.color-principal-1 .rgb::before {
+  content: " (220,20,60)";
+}
+.color-principal-1 .hsl::before {
+  content: " (348,91,47)";
+}
+
+.color-principal-2 {
+  margin: auto;
+}
+.color-principal-2 .muestra {
+  background-color: rgb(192, 192, 192);
+  min-height: 5em;
+}
+.color-principal-2 .nombre::before {
+  content: " Silver";
+}
+.color-principal-2 .hex::before {
+  content: " #c0c0c0";
+}
+.color-principal-2 .rgb::before {
+  content: " (192,192,192)";
+}
+.color-principal-2 .hsl::before {
+  content: " (0,0,75)";
+}
+
+.color-principal-3 {
+  margin: auto;
+}
+.color-principal-3 .muestra {
+  background-color: rgb(0, 255, 0);
+  min-height: 5em;
+}
+.color-principal-3 .nombre::before {
+  content: " Lime";
+}
+.color-principal-3 .hex::before {
+  content: " #32cd32";
+}
+.color-principal-3 .rgb::before {
+  content: " (50,250,50)";
+}
+.color-principal-3 .hsl::before {
+  content: " (120,76,50)";
+}
+
+.color-principal-4 {
+  margin: auto;
+}
+.color-principal-4 .muestra {
+  background-color: rgb(255, 0, 255);
+  min-height: 5em;
+}
+.color-principal-4 .nombre::before {
+  content: " Magenta";
+}
+.color-principal-4 .hex::before {
+  content: " #ff00ff";
+}
+.color-principal-4 .rgb::before {
+  content: " (255,0,250)";
+}
+.color-principal-4 .hsl::before {
+  content: " (300,100,50)";
+}
+
+.tonalidades-color-principal-1 {
+  margin: auto;
+}
+.tonalidades-color-principal-1 h3 {
+  display: none;
+}
+.tonalidades-color-principal-1 .claro {
+  background-color: rgb(243, 124, 148);
+  min-height: 5em;
+}
+.tonalidades-color-principal-1 .normal {
+  background-color: rgb(220, 20, 60);
+  min-height: 5em;
+}
+.tonalidades-color-principal-1 .oscuro {
+  background-color: rgb(103, 10, 28);
+  min-height: 5em;
+}
+
+.tonalidades-color-principal-2 {
+  margin: auto;
+}
+.tonalidades-color-principal-2 h3 {
+  display: none;
+}
+.tonalidades-color-principal-2 .claro {
+  background-color: rgb(255, 255, 255);
+  min-height: 5em;
+}
+.tonalidades-color-principal-2 .normal {
+  background-color: rgb(192, 192, 192);
+  min-height: 5em;
+}
+.tonalidades-color-principal-2 .oscuro {
+  background-color: rgb(64, 64, 64);
+  min-height: 5em;
+}
+
+.tonalidades-color-principal-3 {
+  margin: auto;
+}
+.tonalidades-color-principal-3 h3 {
+  display: none;
+}
+.tonalidades-color-principal-3 .claro {
+  background-color: rgb(128, 255, 128);
+  min-height: 5em;
+}
+.tonalidades-color-principal-3 .normal {
+  background-color: rgb(0, 255, 0);
+  min-height: 5em;
+}
+.tonalidades-color-principal-3 .oscuro {
+  background-color: rgb(0, 128, 0);
+  min-height: 5em;
+}
+
+.tonalidades-color-principal-4 {
+  margin: auto;
+}
+.tonalidades-color-principal-4 h3 {
+  display: none;
+}
+.tonalidades-color-principal-4 .claro {
+  background-color: rgb(255, 128, 255);
+  min-height: 5em;
+}
+.tonalidades-color-principal-4 .normal {
+  background-color: rgb(255, 0, 255);
+  min-height: 5em;
+}
+.tonalidades-color-principal-4 .oscuro {
+  background-color: rgb(128, 0, 128);
+  min-height: 5em;
+}
+
+.combinaciones-color-principal-1 {
+  margin: auto;
+}
+.combinaciones-color-principal-1 div {
+  min-height: 5em;
+}
+.combinaciones-color-principal-1 .muestra {
+  background-color: rgb(220, 20, 60);
+}
+.combinaciones-color-principal-1 .mix-2 {
+  background-color: #cb7b8b;
+}
+.combinaciones-color-principal-1 .mix-3 {
+  background-color: #58a118;
+}
+.combinaciones-color-principal-1 .mix-4 {
+  background-color: #f108b1;
+}
+
+.combinaciones-color-principal-2 {
+  margin: auto;
+}
+.combinaciones-color-principal-2 div {
+  min-height: 5em;
+}
+.combinaciones-color-principal-2 .muestra {
+  background-color: rgb(192, 192, 192);
+}
+.combinaciones-color-principal-2 .mix-1 {
+  background-color: #d15971;
+}
+.combinaciones-color-principal-2 .mix-3 {
+  background-color: #4de64d;
+}
+.combinaciones-color-principal-2 .mix-4 {
+  background-color: #e64de6;
+}
+
+.combinaciones-color-principal-3 {
+  margin: auto;
+}
+.combinaciones-color-principal-3 div {
+  min-height: 5em;
+}
+.combinaciones-color-principal-3 .muestra {
+  background-color: rgb(0, 255, 0);
+}
+.combinaciones-color-principal-3 .mix-1 {
+  background-color: #847224;
+}
+.combinaciones-color-principal-3 .mix-2 {
+  background-color: #73d973;
+}
+.combinaciones-color-principal-3 .mix-4 {
+  background-color: #996699;
+}
+
+.combinaciones-color-principal-4 {
+  margin: auto;
+}
+.combinaciones-color-principal-4 div {
+  min-height: 5em;
+}
+.combinaciones-color-principal-4 .muestra {
+  background-color: rgb(255, 0, 255);
+}
+.combinaciones-color-principal-4 .mix-1 {
+  background-color: #ea0c8a;
+}
+.combinaciones-color-principal-4 .mix-2 {
+  background-color: #d973d9;
+}
+.combinaciones-color-principal-4 .mix-3 {
+  background-color: #669966;
+}/*# sourceMappingURL=style.css.map */

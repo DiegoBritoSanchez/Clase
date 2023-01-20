@@ -1,0 +1,299 @@
+@import 'variables';
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    p {
+        padding-left: 1em;
+    }
+
+    div {
+        width: 27.5em;
+    }
+}
+
+.color-principal-1 {
+    margin: auto;
+
+    .muestra {
+        background-color: $mainColor1;
+        min-height: 5em;
+    }
+
+    .nombre::before {
+        content: ' Crimson';
+    }
+
+    .hex::before {
+        content: ' #DC143C';
+    }
+
+    .rgb::before {
+        content: ' (220,20,60)';
+    }
+
+    .hsl::before {
+        content: ' (348,91,47)';
+    }
+}
+
+.color-principal-2 {
+    margin: auto;
+
+    .muestra {
+        background-color: $mainColor2;
+        min-height: 5em;
+    }
+
+    .nombre::before {
+        content: ' Silver';
+    }
+
+    .hex::before {
+        content: ' #c0c0c0';
+    }
+
+    .rgb::before {
+        content: ' (192,192,192)';
+    }
+
+    .hsl::before {
+        content: ' (0,0,75)';
+    }
+}
+
+.color-principal-3 {
+    margin: auto;
+
+    .muestra {
+        background-color: $mainColor3;
+        min-height: 5em;
+    }
+
+    .nombre::before {
+        content: ' Lime';
+    }
+
+    .hex::before {
+        content: ' #32cd32';
+    }
+
+    .rgb::before {
+        content: ' (50,250,50)';
+    }
+
+    .hsl::before {
+        content: ' (120,76,50)';
+    }
+}
+
+.color-principal-4 {
+    margin: auto;
+
+    .muestra {
+        background-color: $mainColor4;
+        min-height: 5em;
+    }
+
+    .nombre::before {
+        content: ' Magenta';
+    }
+
+    .hex::before {
+        content: ' #ff00ff';
+    }
+
+    .rgb::before {
+        content: ' (255,0,250)';
+    }
+
+    .hsl::before {
+        content: ' (300,100,50)';
+    }
+}
+
+.tonalidades-color-principal-1 {
+    margin: auto;
+
+    h3 {
+        display: none;
+    }
+
+    .claro {
+        background-color: $shader1;
+        min-height: 5em;
+    }
+
+    .normal {
+        background-color: $mainColor1;
+        min-height: 5em;
+    }
+
+    .oscuro {
+        background-color: $shader2;
+        min-height: 5em;
+    }
+}
+
+.tonalidades-color-principal-2 {
+    margin: auto;
+
+    h3 {
+        display: none;
+    }
+
+    .claro {
+        background-color: $shader3;
+        min-height: 5em;
+    }
+
+    .normal {
+        background-color: $mainColor2;
+        min-height: 5em;
+    }
+
+    .oscuro {
+        background-color: $shader4;
+        min-height: 5em;
+    }
+}
+
+.tonalidades-color-principal-3 {
+    margin: auto;
+
+    h3 {
+        display: none;
+    }
+
+    .claro {
+        background-color: $shader5;
+        min-height: 5em;
+    }
+
+    .normal {
+        background-color: $mainColor3;
+        min-height: 5em;
+    }
+
+    .oscuro {
+        background-color: $shader6;
+        min-height: 5em;
+    }
+}
+
+.tonalidades-color-principal-4 {
+    margin: auto;
+
+    h3 {
+        display: none;
+    }
+
+    .claro {
+        background-color: $shader7;
+        min-height: 5em;
+    }
+
+    .normal {
+        background-color: $mainColor4;
+        min-height: 5em;
+    }
+
+    .oscuro {
+        background-color: $shader8;
+        min-height: 5em;
+    }
+}
+
+.combinaciones-color-principal-1 {
+    margin: auto;
+
+    div {
+        min-height: 5em;
+    }
+
+    .muestra {
+        background-color: $mainColor1;
+    }
+
+    .mix-2 {
+        background-color: $mix1;
+    }
+
+    .mix-3 {
+        background-color: $mix2;
+    }
+
+    .mix-4 {
+        background-color: $mix3;
+    }
+}
+.combinaciones-color-principal-2 {
+    margin: auto;
+
+    div {
+        min-height: 5em;
+    }
+
+    .muestra {
+        background-color: $mainColor2;
+    }
+
+    .mix-1 {
+        background-color: $mix4;
+    }
+
+    .mix-3 {
+        background-color: $mix5;
+    }
+
+    .mix-4 {
+        background-color: $mix6;
+    }
+}
+.combinaciones-color-principal-3 {
+    margin: auto;
+
+    div {
+        min-height: 5em;
+    }
+
+    .muestra {
+        background-color: $mainColor3;
+    }
+
+    .mix-1 {
+        background-color: $mix7;
+    }
+
+    .mix-2 {
+        background-color: $mix8;
+    }
+
+    .mix-4 {
+        background-color: $mix9;
+    }
+}
+.combinaciones-color-principal-4 {
+    margin: auto;
+
+    div {
+        min-height: 5em;
+    }
+
+    .muestra {
+        background-color: $mainColor4;
+    }
+
+    .mix-1 {
+        background-color: $mix10;
+    }
+
+    .mix-2 {
+        background-color: $mix11;
+    }
+
+    .mix-3 {
+        background-color: $mix12;
+    }
+}

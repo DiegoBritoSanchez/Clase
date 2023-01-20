@@ -1,0 +1,32 @@
+//main color
+$mainColor1: rgb(220, 20, 60); //crimson
+$mainColor2: rgb(192, 192, 192); //silver
+$mainColor3: rgb(0, 255, 0); //lime
+$mainColor4: rgb(255, 0, 255); //magenta
+
+//shaders
+$shader1: rgb(243, 124, 148);
+$shader2: rgb(103, 10, 28);
+$shader3: rgb(255, 255, 255);
+$shader4: rgb(64, 64, 64);
+$shader5: rgb(128, 255, 128);
+$shader6: rgb(0, 128, 0);
+$shader7: rgb(255, 128, 255);
+$shader8: rgb(128, 0, 128);
+
+//color mixers
+$mix1: mix($mainColor1, $mainColor2, 40%);
+$mix2: mix($mainColor1, $mainColor3, 40%);
+$mix3: mix($mainColor1, $mainColor4, 40%);
+
+$mix4: mix($mainColor2, $mainColor1, 40%);
+$mix5: mix($mainColor2, $mainColor3, 40%);
+$mix6: mix($mainColor2, $mainColor4, 40%);
+
+$mix7: mix($mainColor3, $mainColor1, 40%);
+$mix8: mix($mainColor3, $mainColor2, 40%);
+$mix9: mix($mainColor3, $mainColor4, 40%);
+
+$mix10: mix($mainColor4, $mainColor1, 40%);
+$mix11: mix($mainColor4, $mainColor2, 40%);
+$mix12: mix($mainColor4, $mainColor3, 40%);
