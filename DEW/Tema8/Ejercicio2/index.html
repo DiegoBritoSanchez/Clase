@@ -6,47 +6,14 @@
 </head>
 
 <body>
-    <h1>Información de jugador</h1>
     <form>
-        <label>Nombre de jugador:</label>
-        <input type="text" id="playerName" required>
-        <button type="button" onclick="getPlayerInfo()">Buscar</button>
+        <label>Nombre de invocador:</label>
+        <input type="text" id="summonerName">
+        <button type="button" id="submitBtn">Buscar</button>
     </form>
-    <div id="playerInfo"></div>
-    <script>
-        // Tu clave de API de Riot Games
-        const apiKey = "RGAPI-f9af93ef-6726-496e-80d8-d8ae0c047301";
-        // Dirección URL base de la API
-        const baseUrl = "https://euw1.api.riotgames.com";
 
-        function getPlayerInfo() {
-            // Obtener el nombre de jugador ingresado por el usuario
-            const playerName = document.querySelector("#playerName").value;
-            // Dirección URL para buscar información del jugador
-            const playerUrl = `${baseUrl}/lol/summoner/v4/summoners/by-name/${playerName}`;
-            // Hacer una solicitud HTTP a la API para obtener la información del jugador
-            fetch(playerUrl, {
-                headers: {
-                    "X-Riot-Token": apiKey
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                //     // Mostrar información del jugador en el div
-                //     const playerInfo = `
-                //     <p>ID del jugador: ${data.id}</p>
-                //     <p>Nombre de invocador: ${data.name}</p>
-                //     <p>Nivel: ${data.summonerLevel}</p>
-                // `;
-                //     document.querySelector("#playerInfo").innerHTML = playerInfo;
-                })
-                .catch(error => {
-                    console.log(error);
-                    document.querySelector("#playerInfo").innerHTML = "No se pudo encontrar al jugador.";
-                });
-        }
-    </script>
+    <div id="playerInfo"></div>
+<script src="script.js"></script>
 </body>
 
 </html>
