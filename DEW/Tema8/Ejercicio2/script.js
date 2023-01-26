@@ -149,32 +149,14 @@ function cleanNodes(node) {
     node.removeChild(node.firstChild);
   }
 }
-// function setBackgroundIcon(iconUrl) {
-//   document.body.style.backgroundImage = "url(" + iconUrl + ")";
-//   document.body.style.backgroundSize = "cover";
-//   document.body.style.backgroundRepeat = "no-repeat";
-// }
 
-// Crear una función para asignar el color de fondo
-async function setBackgroundColor(iconUrl) {
-  // Crea un canvas en el HTML
-  var canvas = document.createElement('canvas');
-  var ctx = canvas.getContext('2d');
+// ///*const CORS_ANYWHERE = 'https://cors-anywhere.herokuapp.com/';
+// let typeOfError;
 
-  // Carga la imagen del icono de invocador en el canvas
-  var img = new Image();
-  img.crossOrigin = "Anonymous";
-  img.src = iconUrl;
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0);
-    var imageData = ctx.getImageData(0, 0, img.width, img.height);
-
-    // Utiliza la librería Canvas para analizar los colores dominantes de la imagen
-    var colorThief = new ColorThief();
-    var dominantColor = colorThief.getColor(imageData);
-
-    // Establece el color dominante como el color de fondo del HTML
-    document.body.style.backgroundColor = "rgb(" + dominantColor[0] + "," + dominantColor[1] + "," + dominantColor[2] + ")";
-  };
-
-}
+// const FETCH_DATA = fetch(CORS_ANYWHERE + API_URL, {
+//                         method: 'GET',
+//                         headers: new Headers({
+//                             'Content-Type': 'application/json',
+//                             'Access-Control-Allow-Origin': '*',
+//                         }),
+//                    })
