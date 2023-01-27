@@ -1,5 +1,5 @@
 // API key
-const API_KEY = 'RGAPI-90f5d06e-dec9-4a77-8d97-ee8e43b724a4';
+const API_KEY = 'RGAPI-5837443d-057e-4ee0-8a8e-93b37f481a2a';
 
 //Version and language
 const version = '13.1.1';
@@ -79,9 +79,6 @@ async function showData() {
   await fetchSummoner;
   await fetchBestChamps;
   await fetchChampNames;
-  // console.log(summoner);
-  // console.log(summonerChamps);
-  // console.log(champsName);
 
   // Create table element
   let champsTable = document.createElement('table');
@@ -137,11 +134,27 @@ async function showData() {
     champsTableBody.appendChild(tr);
   });
   champsTable.appendChild(champsTableBody);
+  //Champ searcher
+  let champFinderTable = document.createElement('tbody');
+  let tr = document.createElement('tr');
+  let th = document.createElement('th');
+  th.textContent = "Find a champ:";
+  let td2 = document.createElement('td');
+  let input = document.createElement('input');
+  input.setAttribute('class', 'form-control');
+  input.setAttribute('width', 'auto');
+  input.setAttribute('id', 'ChampFinder');
+  let button = document.createElement('button');
+  button.setAttribute('class', 'btn btn-block');
+  button.textContent = "Find";
+  tr.appendChild(th);
+  td2.appendChild(input);
+  td2.appendChild(button);
+  tr.appendChild(td2);
+  searcher.appendChild(tr);
 
   // Add table to the DOM
   bestsChamps.appendChild(champsTable);
-  setBackgroundColor(iconUrl);
-  //setBackgroundIcon(iconUrl)
 }
 //Function to clean nodes
 function cleanNodes(node) {
@@ -149,14 +162,3 @@ function cleanNodes(node) {
     node.removeChild(node.firstChild);
   }
 }
-
-// ///*const CORS_ANYWHERE = 'https://cors-anywhere.herokuapp.com/';
-// let typeOfError;
-
-// const FETCH_DATA = fetch(CORS_ANYWHERE + API_URL, {
-//                         method: 'GET',
-//                         headers: new Headers({
-//                             'Content-Type': 'application/json',
-//                             'Access-Control-Allow-Origin': '*',
-//                         }),
-//                    })
