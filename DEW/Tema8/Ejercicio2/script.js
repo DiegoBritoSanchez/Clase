@@ -135,6 +135,7 @@ async function showData() {
   });
   champsTable.appendChild(champsTableBody);
   //Champ searcher
+  cleanNodes(searcher);
   let champFinderTable = document.createElement('tbody');
   let tr = document.createElement('tr');
   let th = document.createElement('th');
@@ -146,12 +147,14 @@ async function showData() {
   input.setAttribute('id', 'ChampFinder');
   let button = document.createElement('button');
   button.setAttribute('class', 'btn btn-block');
+  button.setAttribute('id', 'submitFinder');
   button.textContent = "Find";
   tr.appendChild(th);
   td2.appendChild(input);
   td2.appendChild(button);
   tr.appendChild(td2);
   searcher.appendChild(tr);
+  searchButtons();
 
   // Add table to the DOM
   bestsChamps.appendChild(champsTable);
@@ -161,4 +164,17 @@ function cleanNodes(node) {
   while (node.firstChild) {
     node.removeChild(node.firstChild);
   }
+}
+function searchButtons() {
+  document.getElementById("submitFinder").addEventListener("click", searchChamps);
+  document.getElementById("ChampFinder").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      searchChamps();
+    }
+  });
+}
+function searchChamps() {
+  let champSearching = document.getElementById("ChampFinder").value;
+  console.log(champSearching);
 }
