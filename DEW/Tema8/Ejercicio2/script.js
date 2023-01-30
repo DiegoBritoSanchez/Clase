@@ -1,5 +1,5 @@
 // API key
-const API_KEY = 'RGAPI-5837443d-057e-4ee0-8a8e-93b37f481a2a';
+const API_KEY = 'RGAPI-3d0ab296-804a-4e4c-a5d7-3dc0c8659df6';
 
 //Version and language
 const version = '13.1.1';
@@ -89,7 +89,7 @@ async function showData() {
 
   let iconUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${summoner.profileIconId}.png`;
   //Clean icon
-  cleanNodes(icon)
+  cleanNodes(icon);
   let iconImg = document.createElement('img');
   iconImg.setAttribute('width', '52');
   iconImg.setAttribute('height', '52');
@@ -134,16 +134,17 @@ async function showData() {
     champsTableBody.appendChild(tr);
   });
   champsTable.appendChild(champsTableBody);
+
+
   //Champ searcher
   cleanNodes(searcher);
-  let champFinderTable = document.createElement('tbody');
   let tr = document.createElement('tr');
   let th = document.createElement('th');
   th.textContent = "Find a champ:";
   let td2 = document.createElement('td');
   let input = document.createElement('input');
   input.setAttribute('class', 'form-control');
-  input.setAttribute('width', 'auto');
+  input.setAttribute('style', 'width: auto;');
   input.setAttribute('id', 'ChampFinder');
   let button = document.createElement('button');
   button.setAttribute('class', 'btn btn-block');
@@ -158,6 +159,7 @@ async function showData() {
 
   // Add table to the DOM
   bestsChamps.appendChild(champsTable);
+
 }
 //Function to clean nodes
 function cleanNodes(node) {
@@ -175,6 +177,56 @@ function searchButtons() {
   });
 }
 function searchChamps() {
-  let champSearching = document.getElementById("ChampFinder").value;
-  console.log(champSearching);
+  //Clean the nodes
+  cleanNodes(ownChamps);
+  //Get the values with the first uppercase letter
+  let champSearching = document.getElementById("ChampFinder").value[0].toUpperCase() + document.getElementById("ChampFinder").value.substring(1);
+  //Find the champion key by the name
+  let champData = Object.values(champsName.data).find(x => x.name == champSearching);
+  //Iterate for the Champions array to find the data
+  let champFinded;
+  for (let i = 0; i < summonerChamps.length; i++) {
+    if (champData.key == summonerChamps[i].championId) {
+      champFinded = summonerChamps[i];
+    }
+  }
+
+
+  let tr = document.createElement('tr');
+  let td1 = document.createElement('td');
+  td1.textContent = champSearching;
+  let td2 = document.createElement('td');
+  td2.textContent = champFinded.championPoints;
+  let td3 = document.createElement('td');
+  td3.textContent = champFinded.chestGranted ? 'Yes' : 'No';
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+
+  // Create table element
+  let champTable = document.createElement('table');
+  champTable.setAttribute("id", "champTable");
+  champTable.classList.add('table', 'table-striped');
+  // //Table tittle
+  // let title2 = document.createElement('h2');
+  // title2.setAttribute('class', 'text-center');
+  // title2.textContent = "Find your own champion";
+  // ownChamps.appendChild(title2);
+  //Table elements
+  let champTableHead = document.createElement('thead');
+  let champTableHeadRow = document.createElement('tr');
+  let th4 = document.createElement('th');
+  th4.textContent = 'Champion';
+  let th5 = document.createElement('th');
+  th5.textContent = 'Points';
+  let th6 = document.createElement('th');
+  th6.textContent = 'Chest';
+  champTableHeadRow.appendChild(th4);
+  champTableHeadRow.appendChild(th5);
+  champTableHeadRow.appendChild(th6);
+  champTableHead.appendChild(champTableHeadRow);
+  champTable.appendChild(champTableHead);
+  champTable.appendChild(tr);
+  //Add the table to the DOM
+  ownChamps.appendChild(champTable);
 }
