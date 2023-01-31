@@ -1,5 +1,8 @@
+//* Si la API_KEY no funciona, entrar en la siguiente direccion https://developer.riotgames.com/
+//* registrarse en caso de no estarlo y obtener una nueva key.
+//* estoy a la espera de que RIOT me conceda un key permanente para mi proyecto
 // API key
-const API_KEY = 'RGAPI-3d0ab296-804a-4e4c-a5d7-3dc0c8659df6';
+const API_KEY = 'RGAPI-fc56d589-ebce-4cea-9562-34f9fca1b771';
 
 //Version and language
 const version = '13.1.1';
@@ -13,8 +16,7 @@ var fetchSummoner;
 var fetchBestChamps;
 var fetchChampNames;
 var api2;
-// ColorThief Library import
-const colorThief = new ColorThief();
+
 
 // Button Listener
 document.getElementById("submitBtn").addEventListener("click", search);
@@ -25,11 +27,13 @@ document.getElementById("summonerName").addEventListener("keydown", function (e)
   }
 });
 
+document.getElementById("summonerName").value = localStorage.getItem("summonerName") || "";
+
 // Button Listener
 async function search() {
-  //Receive the summoner's name
   let summonerName = document.getElementById("summonerName").value;
-  //let summonerName = "Haizefüjin";
+
+  localStorage.setItem("summonerName", summonerName);
 
   // First API
   const api = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${API_KEY}`;
@@ -120,7 +124,7 @@ async function showData() {
   let champsTableBody = document.createElement('tbody');
   let bestFive = summonerChamps.slice(0, 5);
   bestFive.map(function (champ) {
-    let champData = Object.values(champsName.data).find(x => x.key == champ.championId);
+    let champData = Object.values(champsName.data).filter(x => x.key == champ.championId)[0];
     let tr = document.createElement('tr');
     let td1 = document.createElement('td');
     td1.textContent = champData.name;
@@ -159,7 +163,7 @@ async function showData() {
 
   // Add table to the DOM
   bestsChamps.appendChild(champsTable);
-
+  cleanNodes(ownChamps);
 }
 //Function to clean nodes
 function cleanNodes(node) {
