@@ -2,7 +2,7 @@
 //* registrarse en caso de no estarlo y obtener una nueva key.
 //* estoy a la espera de que RIOT me conceda un key permanente para mi proyecto
 // API key
-const API_KEY = 'RGAPI-fc56d589-ebce-4cea-9562-34f9fca1b771';
+const API_KEY = 'RGAPI-3839e780-5189-4ea3-9d0c-080ce61b0eb5';
 
 //Version and language
 const version = '13.1.1';
@@ -40,14 +40,20 @@ async function search() {
 
   // First call
   fetchSummoner = await fetch(api)
-    .then(response => response.json())
+    .then(response => {
+      if (response.status_code == "400") {
+        console.log("xd");
+      } else {
+        return response.json();
+      }
+    })
     .then(data => {
       summoner = data;
     })
     .catch(error => {
+      console.log(error.status_code);
       // Show error message
       summonerInfoDiv.innerHTML = '<p>Error: no se puede obtener la información del invocador</p>';
-      console.error(error);
     });
   const api2 = `https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summoner.id}?api_key=${API_KEY}`;
   ''
