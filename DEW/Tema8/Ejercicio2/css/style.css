@@ -1,31 +1,32 @@
 body {
-  background-color: #6dbdda;
-}
-@media (max-width: 767px) {
-  body {
-    background-color: #aad9e9;
-  }
+  background-color: #6DBDDA;
 }
 
+@media (max-width: 767px) {
+  body {
+    background-color: #87ceeb;
+  }
+}
 table {
   border-collapse: collapse;
   width: 100%;
-  background-color: #3f84a3;
+  background-color: #4682b4;
 }
+
 @media (max-width: 767px) {
   table {
     width: 80%;
     margin: 0 auto;
   }
 }
-
 th,
 td {
-  border: 1px solid #1c2e3f;
+  border: 1px solid #B0E0E6;
   padding: 8px;
   text-align: center;
-  color: white;
+  color: #fff;
 }
+
 @media (max-width: 767px) {
   th,
 td {
@@ -33,17 +34,21 @@ td {
     font-size: 0.9rem;
   }
 }
-
 th {
   background-color: #1c2e3f;
+}
+
+td {
+  color: #fff;
 }
 
 h1,
 h2,
 h3,
 p {
-  color: #333;
+  color: #1c2e3f;
 }
+
 @media (max-width: 767px) {
   h1,
 h2,
@@ -52,17 +57,23 @@ p {
     font-size: 1.2rem;
   }
 }
-
 .btn-block {
   background-color: #333;
   color: #fff;
+  width: 5em;
 }
+
 @media (max-width: 767px) {
   .btn-block {
     margin-left: 0;
     width: 80%;
     margin: 10px auto 0 auto;
   }
+}
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
@@ -72,10 +83,17 @@ input {
 .table > :not(caption) > * th {
   background-color: #1c2e3f;
 }
+
 .table > :not(caption) > * .btn {
-  background-color: #333;
+  background-color: #1c2e3f;
 }
+
 .table > :not(caption) > * input {
-  background-color: white;
+  background-color: #fff;
   width: auto;
 }
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

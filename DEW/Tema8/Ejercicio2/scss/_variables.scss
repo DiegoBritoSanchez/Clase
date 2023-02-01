@@ -1,0 +1,26 @@
+// Baby Blue (#6DBDDA), RGB (109, 189, 218)
+// Sky Blue (#87CEEB), RGB (135, 206, 235)
+// Steel Blue (#4682B4), RGB (70, 130, 180)
+// Light Steel Blue (#B0C4DE), RGB (176, 196, 222)
+// Powder Blue (#B0E0E6), RGB (176, 224, 230)
+// Light Sky Blue (#87CEFA), RGB (135, 206, 250)
+// Cornflower Blue (#6495ED), RGB (100, 149, 237)
+// Baby Powder (#F0FFFF), RGB (240, 255, 255)
+// Iceberg (#71A6D2), RGB (113, 166, 210)
+// Alice Blue (#F0F8FF), RGB (240, 248, 255)
+$color1: #6DBDDA;
+$color2: #87ceeb;
+$color3: #4682b4;
+$color4: #B0C4DE;
+$color5: #B0E0E6;
+$color6: #87CEFA;
+$color7: #71A6D2;
+$color8: #6495ED;
+$color9: #fff;
+$colorTh: #1c2e3f;
+
+@mixin tableStyles($color3) {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: $color;
+}

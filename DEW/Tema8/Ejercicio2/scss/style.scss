@@ -1,2 +1,106 @@
 @import 'variables';
 
+body {
+    background-color: $color1;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-color: $color2;
+    }
+}
+
+table {
+    @include tableStyles;
+}
+
+
+@media (max-width: 767px) {
+    table {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+th,
+td {
+    border: 1px solid $color5;
+    padding: 8px;
+    text-align: center;
+    color: $color9;
+}
+
+@media (max-width: 767px) {
+
+    th,
+    td {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+th {
+    background-color: $colorTh;
+}
+td{
+    color: $color9;
+}
+
+h1,
+h2,
+h3,
+p {
+    color: $colorTh;
+}
+
+@media (max-width: 767px) {
+
+    h1,
+    h2,
+    h3,
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+.btn-block {
+    background-color: #333;
+    color: #fff;
+    width: 5em;
+}
+
+@media (max-width: 767px) {
+    .btn-block {
+        margin-left: 0;
+        width: 80%;
+        margin: 10px auto 0 auto;
+    }
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input {
+    width: auto;
+}
+
+.table> :not(caption)>* th {
+    background-color: $colorTh;
+}
+
+.table> :not(caption)>* .btn {
+    background-color: $colorTh;
+}
+
+.table> :not(caption)>* input {
+    background-color: $color9;
+    width: auto;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: $color9;
+}

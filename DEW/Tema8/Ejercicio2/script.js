@@ -40,18 +40,12 @@ async function search() {
 
   // First call
   fetchSummoner = await fetch(api)
-    .then(response => {
-      if (response.status_code == "400") {
-        console.log("xd");
-      } else {
-        return response.json();
-      }
-    })
+    .then(response => response.json())
     .then(data => {
       summoner = data;
     })
     .catch(error => {
-      console.log(error.status_code);
+      console.log(error);
       // Show error message
       summonerInfoDiv.innerHTML = '<p>Error: no se puede obtener la información del invocador</p>';
     });
@@ -86,9 +80,9 @@ async function showData() {
   cleanNodes(bestsChamps);
 
   //Summoner information
-  await fetchSummoner;
-  await fetchBestChamps;
-  await fetchChampNames;
+  fetchSummoner;
+  fetchBestChamps;
+  fetchChampNames;
 
   // Create table element
   let champsTable = document.createElement('table');
