@@ -1,7 +1,8 @@
 @import 'variables';
+@import 'video';
 
 body {
-    background-color: $color1;
+    background-color: setBGcolor($color1);
 }
 
 @media (max-width: 767px) {
@@ -11,7 +12,7 @@ body {
 }
 
 table {
-    @include tableStyles;
+    @include tableStyles($color3);
 }
 
 
@@ -40,7 +41,7 @@ td {
 }
 
 th {
-    background-color: $colorTh;
+    @include thBackground;
 }
 td{
     color: $color9;
@@ -77,11 +78,6 @@ p {
     }
 }
 
-.video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 input {

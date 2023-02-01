@@ -22,5 +22,13 @@ $colorTh: #1c2e3f;
 @mixin tableStyles($color3) {
     border-collapse: collapse;
     width: 100%;
-    background-color: $color;
+    background-color: $color3;
+}
+
+@mixin thBackground(){
+    background-color: $colorTh;
+}
+
+@function setBGcolor($color) {
+    @return #{$color};
 }
