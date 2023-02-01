@@ -153,12 +153,13 @@ async function showData() {
   th.textContent = "Find a champ:";
   let td2 = document.createElement('td');
   let input = document.createElement('input');
-  input.setAttribute('class', 'form-control');
+  input.setAttribute('class', 'form-control mt-3 mx-auto');
   input.setAttribute('style', 'width: auto;');
   input.setAttribute('id', 'ChampFinder');
   let button = document.createElement('button');
-  button.setAttribute('class', 'btn btn-block');
+  button.setAttribute('class', 'btn btn-block mt-3');
   button.setAttribute('id', 'submitFinder');
+  button.setAttribute('type', 'button');
   button.textContent = "Find";
   tr.appendChild(th);
   td2.appendChild(input);
