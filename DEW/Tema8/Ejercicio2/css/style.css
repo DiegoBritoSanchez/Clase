@@ -96,4 +96,21 @@ input {
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: #fff;
+}
+
+.darkBtn {
+  float: right;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+.dark-mode h2 {
+  color: #fff;
+}
+.dark-mode .darkBtn {
+  background-color: #6DBDDA;
+  color: #333;
+  width: 5em;
 }/*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@
 //* registrarse en caso de no estarlo y obtener una nueva key.
 //* estoy a la espera de que RIOT me conceda un key permanente para mi proyecto
 // API key
-const API_KEY = 'RGAPI-3839e780-5189-4ea3-9d0c-080ce61b0eb5';
+const API_KEY = 'RGAPI-290b5114-5388-4db3-936f-8d9b7d49aee7';
 
 //Version and language
 const version = '13.1.1';
@@ -234,4 +234,10 @@ function searchChamps() {
   champTable.appendChild(tr);
   //Add the table to the DOM
   ownChamps.appendChild(champTable);
+}
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
+  const darkBtn = document.querySelector(".darkBtn");
+  darkBtn.innerText = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
 }

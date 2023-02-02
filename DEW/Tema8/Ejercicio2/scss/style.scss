@@ -43,7 +43,8 @@ td {
 th {
     @include thBackground;
 }
-td{
+
+td {
     color: $color9;
 }
 
@@ -96,7 +97,26 @@ input {
     background-color: $color9;
     width: auto;
 }
+
 .table-striped>tbody>tr:nth-of-type(odd)>* {
     --bs-table-accent-bg: var(--bs-table-striped-bg);
     color: $color9;
+}
+.darkBtn{
+    float: right;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+
+    h2 {
+        color: #fff;
+    }
+
+    .darkBtn {
+        background-color: $color1;
+        color: #333;
+        width: 5em;
+    }
 }
