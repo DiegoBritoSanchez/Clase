@@ -2,7 +2,7 @@
 //* registrarse en caso de no estarlo y obtener una nueva key.
 //* estoy a la espera de que RIOT me conceda un key permanente para mi proyecto
 // API key
-const API_KEY = 'RGAPI-290b5114-5388-4db3-936f-8d9b7d49aee7';
+const API_KEY = 'RGAPI-c65dc132-29ad-4e10-94fc-6c0ff6a711ed';
 
 //Version and language
 const version = '13.1.1';
