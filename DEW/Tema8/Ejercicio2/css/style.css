@@ -113,4 +113,17 @@ input {
   background-color: #6DBDDA;
   color: #333;
   width: 5em;
+}
+
+@media (max-width: 767px) {
+  .darkBtn {
+    float: none;
+    margin-right: 0;
+    margin-left: 78%;
+  }
+  .darkBtn {
+    background-color: #6DBDDA;
+    color: #333;
+    width: 5em;
+  }
 }/*# sourceMappingURL=style.css.map */

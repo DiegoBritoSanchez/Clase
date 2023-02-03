@@ -120,3 +120,16 @@ input {
         width: 5em;
     }
 }
+
+@media (max-width: 767px) {
+    .darkBtn{
+        float: none;
+        margin-right: 0;
+        margin-left: 78%;
+    }
+    .darkBtn {
+        background-color: $color1;
+        color: #333;
+        width: 5em;
+    }
+}
