@@ -98,7 +98,7 @@ async function showData() {
   iconImg.setAttribute('width', '52');
   iconImg.setAttribute('height', '52');
   iconImg.setAttribute('class', 'img-fluid rounded');
-  iconImg.setAttribute('alt', `${summoner} icon`);
+  iconImg.setAttribute('alt', `${summoner.name} icon`);
   iconImg.src = iconUrl;
   icon.appendChild(iconImg);
 

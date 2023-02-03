@@ -1,8 +1,10 @@
 @import 'variables';
 @import 'video';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 body {
     background-color: setBGcolor($color1);
+    font-family: 'Open Sans', sans-serif;
 }
 
 @media (max-width: 767px) {
