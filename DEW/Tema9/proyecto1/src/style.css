@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box {
+    width: 30%;
+    background-color: gold !important;
+    font-size: 2.3em;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border: 0.3rem solid black;
+    color: black;
+    margin: 3em 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.name{
+    padding: 1em;
+}
+img {
+    width: 100%;
+}
