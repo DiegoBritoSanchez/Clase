@@ -8,12 +8,24 @@ function App() {
   const boxRef = useRef();
   const add = (e) => {
     e.target.innerHTML = Number(e.target.innerHTML) + 1;
+    if (e.target.innerHTML >= 10) {
+      e.target.innerHTML = 1;
+    }
+    if (e.target.innerHTML >= 8) {
+      e.target.style.backgroundColor = 'red';
+    } else {
+      e.target.style.backgroundColor = 'white';
+    }
   }
   const multiply = () => {
     boxRef.current.innerHTML = Number(boxRef.current.innerHTML) * change;
   }
   const changeImg = (e) => {
-    e.target.src = img2;
+    if (e.target.src.includes("ervigio")) {
+      e.target.src = img2;
+    } else {
+      e.target.src = img;
+    }
   }
   const read = (e) => {
     boxRef.current.innerHTML = e.target.value;
