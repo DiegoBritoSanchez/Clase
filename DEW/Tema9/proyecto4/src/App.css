@@ -1,0 +1,18 @@
+.rey{
+  color:white;
+  padding:2px 15px 20px;
+  margin-bottom: 10px;
+  width: 30%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+img{
+  width: 100%;
+}
+
+.caja{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
