@@ -1,0 +1,53 @@
+body {
+background-color: aquamarine;
+}
+.contenedor {
+	position: relative;
+	width: 800px;
+	height: 600px;
+	margin: auto;
+}
+
+img {
+    height: 100%;
+	position: absolute;
+}
+
+#pelota {
+    width: 36px;
+    height: 36px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	animation-name: caida;
+	animation-duration: 9.4s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes caida {
+	from {
+		top: 0;
+	}
+
+	to {
+		top: 500px;
+	}
+}
+
+button {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #ff9900;
+	color: white;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #cc7a00;
+}

@@ -1,0 +1,15 @@
+.cuadrado {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	transition: width 3s;
+}
+
+.cuadrado:hover {
+	width: 600px;
+}
+
+.texto {
+	font-size: 12px;
+	transition: font-size 3s;
+}
